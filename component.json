@@ -1,0 +1,2862 @@
+{
+    "title": "AWS IoT",
+    "description": "<fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>For more information about how AWS IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for AWS IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to AWS Services</a>.</p>",
+    "docsUrl": "https://aws.amazon.com/iot/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/iot/2015-05-28/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://iot.amazonaws.com/",
+                    "http://iot.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AcceptCertificateTransfer": {
+            "main": "./lib/actions/AcceptCertificateTransfer.js",
+            "title": "<p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p>",
+            "description": "<p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AcceptCertificateTransfer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListActiveViolations": {
+            "main": "./lib/actions/ListActiveViolations.js",
+            "title": "Lists the active violations for a given Device Defender security profile.",
+            "description": "Lists the active violations for a given Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListActiveViolations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAttachedPolicies": {
+            "main": "./lib/actions/ListAttachedPolicies.js",
+            "title": "Lists the policies attached to the specified thing group.",
+            "description": "Lists the policies attached to the specified thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAttachedPolicies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteAccountAuditConfiguration": {
+            "main": "./lib/actions/DeleteAccountAuditConfiguration.js",
+            "title": "Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled. ",
+            "description": "Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteAccountAuditConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeAccountAuditConfiguration": {
+            "main": "./lib/actions/DescribeAccountAuditConfiguration.js",
+            "title": "Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "description": "Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeAccountAuditConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateAccountAuditConfiguration": {
+            "main": "./lib/actions/UpdateAccountAuditConfiguration.js",
+            "title": "Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "description": "Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateAccountAuditConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAuditFindings": {
+            "main": "./lib/actions/ListAuditFindings.js",
+            "title": "Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 180 days.)",
+            "description": "Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 180 days.)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAuditFindings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListScheduledAudits": {
+            "main": "./lib/actions/ListScheduledAudits.js",
+            "title": "Lists all of your scheduled audits.",
+            "description": "Lists all of your scheduled audits.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListScheduledAudits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteScheduledAudit": {
+            "main": "./lib/actions/DeleteScheduledAudit.js",
+            "title": "Deletes a scheduled audit.",
+            "description": "Deletes a scheduled audit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteScheduledAudit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeScheduledAudit": {
+            "main": "./lib/actions/DescribeScheduledAudit.js",
+            "title": "Gets information about a scheduled audit.",
+            "description": "Gets information about a scheduled audit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeScheduledAudit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateScheduledAudit": {
+            "main": "./lib/actions/UpdateScheduledAudit.js",
+            "title": "Updates a scheduled audit, including what checks are performed and how often the audit takes place.",
+            "description": "Updates a scheduled audit, including what checks are performed and how often the audit takes place.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateScheduledAudit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateScheduledAudit": {
+            "main": "./lib/actions/CreateScheduledAudit.js",
+            "title": "Creates a scheduled audit that is run at a specified time interval.",
+            "description": "Creates a scheduled audit that is run at a specified time interval.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateScheduledAudit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAuditTasks": {
+            "main": "./lib/actions/ListAuditTasks.js",
+            "title": "Lists the Device Defender audits that have been performed during a given time period.",
+            "description": "Lists the Device Defender audits that have been performed during a given time period.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAuditTasks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StartOnDemandAuditTask": {
+            "main": "./lib/actions/StartOnDemandAuditTask.js",
+            "title": "Starts an on-demand Device Defender audit.",
+            "description": "Starts an on-demand Device Defender audit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StartOnDemandAuditTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeAuditTask": {
+            "main": "./lib/actions/DescribeAuditTask.js",
+            "title": "Gets information about a Device Defender audit.",
+            "description": "Gets information about a Device Defender audit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeAuditTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CancelAuditTask": {
+            "main": "./lib/actions/CancelAuditTask.js",
+            "title": "Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in progress, an \"InvalidRequestException\" occurs.",
+            "description": "Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in progress, an \"InvalidRequestException\" occurs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CancelAuditTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteAuthorizer": {
+            "main": "./lib/actions/DeleteAuthorizer.js",
+            "title": "Deletes an authorizer.",
+            "description": "Deletes an authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeAuthorizer": {
+            "main": "./lib/actions/DescribeAuthorizer.js",
+            "title": "Describes an authorizer.",
+            "description": "Describes an authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateAuthorizer": {
+            "main": "./lib/actions/CreateAuthorizer.js",
+            "title": "Creates an authorizer.",
+            "description": "Creates an authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateAuthorizer": {
+            "main": "./lib/actions/UpdateAuthorizer.js",
+            "title": "Updates an authorizer.",
+            "description": "Updates an authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TestInvokeAuthorizer": {
+            "main": "./lib/actions/TestInvokeAuthorizer.js",
+            "title": "Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "description": "Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TestInvokeAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAuthorizers": {
+            "main": "./lib/actions/ListAuthorizers.js",
+            "title": "Lists the authorizers registered in your account.",
+            "description": "Lists the authorizers registered in your account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAuthorizers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListBillingGroups": {
+            "main": "./lib/actions/ListBillingGroups.js",
+            "title": "Lists the billing groups you have created.",
+            "description": "Lists the billing groups you have created.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListBillingGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AddThingToBillingGroup": {
+            "main": "./lib/actions/AddThingToBillingGroup.js",
+            "title": "Adds a thing to a billing group.",
+            "description": "Adds a thing to a billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AddThingToBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RemoveThingFromBillingGroup": {
+            "main": "./lib/actions/RemoveThingFromBillingGroup.js",
+            "title": "Removes the given thing from the billing group.",
+            "description": "Removes the given thing from the billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RemoveThingFromBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteBillingGroup": {
+            "main": "./lib/actions/DeleteBillingGroup.js",
+            "title": "Deletes the billing group.",
+            "description": "Deletes the billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeBillingGroup": {
+            "main": "./lib/actions/DescribeBillingGroup.js",
+            "title": "Returns information about a billing group.",
+            "description": "Returns information about a billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBillingGroup": {
+            "main": "./lib/actions/UpdateBillingGroup.js",
+            "title": "Updates information about the billing group.",
+            "description": "Updates information about the billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateBillingGroup": {
+            "main": "./lib/actions/CreateBillingGroup.js",
+            "title": "Creates a billing group.",
+            "description": "Creates a billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingsInBillingGroup": {
+            "main": "./lib/actions/ListThingsInBillingGroup.js",
+            "title": "Lists the things you have added to the given billing group.",
+            "description": "Lists the things you have added to the given billing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingsInBillingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RegisterCACertificate": {
+            "main": "./lib/actions/RegisterCACertificate.js",
+            "title": "Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.",
+            "description": "Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RegisterCACertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteCACertificate": {
+            "main": "./lib/actions/DeleteCACertificate.js",
+            "title": "Deletes a registered CA certificate.",
+            "description": "Deletes a registered CA certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteCACertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeCACertificate": {
+            "main": "./lib/actions/DescribeCACertificate.js",
+            "title": "Describes a registered CA certificate.",
+            "description": "Describes a registered CA certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeCACertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateCACertificate": {
+            "main": "./lib/actions/UpdateCACertificate.js",
+            "title": "Updates a registered CA certificate.",
+            "description": "Updates a registered CA certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateCACertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListCACertificates": {
+            "main": "./lib/actions/ListCACertificates.js",
+            "title": "<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "description": "<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListCACertificates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CancelCertificateTransfer": {
+            "main": "./lib/actions/CancelCertificateTransfer.js",
+            "title": "<p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>",
+            "description": "<p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CancelCertificateTransfer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RegisterCertificate": {
+            "main": "./lib/actions/RegisterCertificate.js",
+            "title": "Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.",
+            "description": "Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RegisterCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListCertificates": {
+            "main": "./lib/actions/ListCertificates.js",
+            "title": "<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "description": "<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListCertificates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateCertificateFromCsr": {
+            "main": "./lib/actions/CreateCertificateFromCsr.js",
+            "title": "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p> <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
+            "description": "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p> <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateCertificateFromCsr.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListCertificatesByCA": {
+            "main": "./lib/actions/ListCertificatesByCA.js",
+            "title": "List the device certificates signed by the specified CA certificate.",
+            "description": "List the device certificates signed by the specified CA certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListCertificatesByCA.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListOutgoingCertificates": {
+            "main": "./lib/actions/ListOutgoingCertificates.js",
+            "title": "Lists certificates that are being transferred but not yet accepted.",
+            "description": "Lists certificates that are being transferred but not yet accepted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListOutgoingCertificates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteCertificate": {
+            "main": "./lib/actions/DeleteCertificate.js",
+            "title": "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
+            "description": "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeCertificate": {
+            "main": "./lib/actions/DescribeCertificate.js",
+            "title": "Gets information about the specified certificate.",
+            "description": "Gets information about the specified certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateCertificate": {
+            "main": "./lib/actions/UpdateCertificate.js",
+            "title": "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices, but these devices will be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.</p>",
+            "description": "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices, but these devices will be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ClearDefaultAuthorizer": {
+            "main": "./lib/actions/ClearDefaultAuthorizer.js",
+            "title": "Clears the default authorizer.",
+            "description": "Clears the default authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ClearDefaultAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeDefaultAuthorizer": {
+            "main": "./lib/actions/DescribeDefaultAuthorizer.js",
+            "title": "Describes the default authorizer.",
+            "description": "Describes the default authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeDefaultAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetDefaultAuthorizer": {
+            "main": "./lib/actions/SetDefaultAuthorizer.js",
+            "title": "Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.",
+            "description": "Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetDefaultAuthorizer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteDynamicThingGroup": {
+            "main": "./lib/actions/DeleteDynamicThingGroup.js",
+            "title": "Deletes a dynamic thing group.",
+            "description": "Deletes a dynamic thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteDynamicThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateDynamicThingGroup": {
+            "main": "./lib/actions/UpdateDynamicThingGroup.js",
+            "title": "Updates a dynamic thing group.",
+            "description": "Updates a dynamic thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateDynamicThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateDynamicThingGroup": {
+            "main": "./lib/actions/CreateDynamicThingGroup.js",
+            "title": "Creates a dynamic thing group.",
+            "description": "Creates a dynamic thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateDynamicThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetEffectivePolicies": {
+            "main": "./lib/actions/GetEffectivePolicies.js",
+            "title": "Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the AWS IoT device gateway.",
+            "description": "Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the AWS IoT device gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetEffectivePolicies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeEndpoint": {
+            "main": "./lib/actions/DescribeEndpoint.js",
+            "title": "Returns a unique endpoint specific to the AWS account making the call.",
+            "description": "Returns a unique endpoint specific to the AWS account making the call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeEndpoint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeEventConfigurations": {
+            "main": "./lib/actions/DescribeEventConfigurations.js",
+            "title": "Describes event configurations.",
+            "description": "Describes event configurations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeEventConfigurations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateEventConfigurations": {
+            "main": "./lib/actions/UpdateEventConfigurations.js",
+            "title": "Updates the event configurations.",
+            "description": "Updates the event configurations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateEventConfigurations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetIndexingConfiguration": {
+            "main": "./lib/actions/GetIndexingConfiguration.js",
+            "title": "Gets the search configuration.",
+            "description": "Gets the search configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetIndexingConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateIndexingConfiguration": {
+            "main": "./lib/actions/UpdateIndexingConfiguration.js",
+            "title": "Updates the search configuration.",
+            "description": "Updates the search configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateIndexingConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListIndices": {
+            "main": "./lib/actions/ListIndices.js",
+            "title": "Lists the search indices.",
+            "description": "Lists the search indices.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListIndices.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchIndex": {
+            "main": "./lib/actions/SearchIndex.js",
+            "title": "The query search index.",
+            "description": "The query search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchIndex.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeIndex": {
+            "main": "./lib/actions/DescribeIndex.js",
+            "title": "Describes a search index.",
+            "description": "Describes a search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeIndex.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListJobs": {
+            "main": "./lib/actions/ListJobs.js",
+            "title": "Lists jobs.",
+            "description": "Lists jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteJob": {
+            "main": "./lib/actions/DeleteJob.js",
+            "title": "<p>Deletes a job and its related job executions.</p> <p>Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as \"DELETION_IN_PROGRESS\". Attempting to delete or cancel a job whose status is already \"DELETION_IN_PROGRESS\" will result in an error.</p> <p>Only 10 jobs may have status \"DELETION_IN_PROGRESS\" at the same time, or a LimitExceededException will occur.</p>",
+            "description": "<p>Deletes a job and its related job executions.</p> <p>Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as \"DELETION_IN_PROGRESS\". Attempting to delete or cancel a job whose status is already \"DELETION_IN_PROGRESS\" will result in an error.</p> <p>Only 10 jobs may have status \"DELETION_IN_PROGRESS\" at the same time, or a LimitExceededException will occur.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeJob": {
+            "main": "./lib/actions/DescribeJob.js",
+            "title": "Describes a job.",
+            "description": "Describes a job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateJob": {
+            "main": "./lib/actions/UpdateJob.js",
+            "title": "Updates supported fields of the specified job.",
+            "description": "Updates supported fields of the specified job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateJob": {
+            "main": "./lib/actions/CreateJob.js",
+            "title": "Creates a job.",
+            "description": "Creates a job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CancelJob": {
+            "main": "./lib/actions/CancelJob.js",
+            "title": "Cancels a job.",
+            "description": "Cancels a job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CancelJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetJobDocument": {
+            "main": "./lib/actions/GetJobDocument.js",
+            "title": "Gets a job document.",
+            "description": "Gets a job document.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetJobDocument.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateTargetsWithJob": {
+            "main": "./lib/actions/AssociateTargetsWithJob.js",
+            "title": "<p>Associates a group with a continuous job. The following criteria must be met: </p> <ul> <li> <p>The job must have been created with the <code>targetSelection</code> field set to \"CONTINUOUS\".</p> </li> <li> <p>The job status must currently be \"IN_PROGRESS\".</p> </li> <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> </ul>",
+            "description": "<p>Associates a group with a continuous job. The following criteria must be met: </p> <ul> <li> <p>The job must have been created with the <code>targetSelection</code> field set to \"CONTINUOUS\".</p> </li> <li> <p>The job status must currently be \"IN_PROGRESS\".</p> </li> <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> </ul>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateTargetsWithJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListJobExecutionsForJob": {
+            "main": "./lib/actions/ListJobExecutionsForJob.js",
+            "title": "Lists the job executions for a job.",
+            "description": "Lists the job executions for a job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListJobExecutionsForJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateKeysAndCertificate": {
+            "main": "./lib/actions/CreateKeysAndCertificate.js",
+            "title": "<p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep it in a secure location.</p>",
+            "description": "<p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep it in a secure location.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateKeysAndCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetLoggingOptions": {
+            "main": "./lib/actions/GetLoggingOptions.js",
+            "title": "<p>Gets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code> instead.</p>",
+            "description": "<p>Gets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetLoggingOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetLoggingOptions": {
+            "main": "./lib/actions/SetLoggingOptions.js",
+            "title": "<p>Sets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code> instead.</p>",
+            "description": "<p>Sets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetLoggingOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListOTAUpdates": {
+            "main": "./lib/actions/ListOTAUpdates.js",
+            "title": "Lists OTA updates.",
+            "description": "Lists OTA updates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListOTAUpdates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteOTAUpdate": {
+            "main": "./lib/actions/DeleteOTAUpdate.js",
+            "title": "Delete an OTA update.",
+            "description": "Delete an OTA update.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteOTAUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetOTAUpdate": {
+            "main": "./lib/actions/GetOTAUpdate.js",
+            "title": "Gets an OTA update.",
+            "description": "Gets an OTA update.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOTAUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateOTAUpdate": {
+            "main": "./lib/actions/CreateOTAUpdate.js",
+            "title": "Creates an AWS IoT OTAUpdate on a target group of things or groups.",
+            "description": "Creates an AWS IoT OTAUpdate on a target group of things or groups.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateOTAUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPolicies": {
+            "main": "./lib/actions/ListPolicies.js",
+            "title": "Lists your policies.",
+            "description": "Lists your policies.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPolicies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeletePolicy": {
+            "main": "./lib/actions/DeletePolicy.js",
+            "title": "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the DeletePolicyVersion API to delete all non-default versions of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
+            "description": "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the DeletePolicyVersion API to delete all non-default versions of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeletePolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetPolicy": {
+            "main": "./lib/actions/GetPolicy.js",
+            "title": "Gets information about the specified policy with the policy document of the default version.",
+            "description": "Gets information about the specified policy with the policy document of the default version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreatePolicy": {
+            "main": "./lib/actions/CreatePolicy.js",
+            "title": "<p>Creates an AWS IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p>",
+            "description": "<p>Creates an AWS IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreatePolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPolicyVersions": {
+            "main": "./lib/actions/ListPolicyVersions.js",
+            "title": "Lists the versions of the specified policy and identifies the default version.",
+            "description": "Lists the versions of the specified policy and identifies the default version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPolicyVersions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreatePolicyVersion": {
+            "main": "./lib/actions/CreatePolicyVersion.js",
+            "title": "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>",
+            "description": "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreatePolicyVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeletePolicyVersion": {
+            "main": "./lib/actions/DeletePolicyVersion.js",
+            "title": "Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.",
+            "description": "Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeletePolicyVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetPolicyVersion": {
+            "main": "./lib/actions/GetPolicyVersion.js",
+            "title": "Gets information about the specified policy version.",
+            "description": "Gets information about the specified policy version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetPolicyVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetDefaultPolicyVersion": {
+            "main": "./lib/actions/SetDefaultPolicyVersion.js",
+            "title": "Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicy API.",
+            "description": "Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicy API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetDefaultPolicyVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPolicyPrincipals": {
+            "main": "./lib/actions/ListPolicyPrincipals.js",
+            "title": "<p>Lists the principals associated with the specified policy.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.</p>",
+            "description": "<p>Lists the principals associated with the specified policy.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPolicyPrincipals.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTargetsForPolicy": {
+            "main": "./lib/actions/ListTargetsForPolicy.js",
+            "title": "List targets for the specified policy.",
+            "description": "List targets for the specified policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTargetsForPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPrincipalPolicies": {
+            "main": "./lib/actions/ListPrincipalPolicies.js",
+            "title": "<p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href=\"https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax\">AmazonCognito Identity format</a>.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.</p>",
+            "description": "<p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href=\"https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax\">AmazonCognito Identity format</a>.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPrincipalPolicies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DetachPrincipalPolicy": {
+            "main": "./lib/actions/DetachPrincipalPolicy.js",
+            "title": "<p>Removes the specified policy from the specified certificate.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.</p>",
+            "description": "<p>Removes the specified policy from the specified certificate.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DetachPrincipalPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AttachPrincipalPolicy": {
+            "main": "./lib/actions/AttachPrincipalPolicy.js",
+            "title": "<p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p> <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.</p>",
+            "description": "<p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p> <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AttachPrincipalPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPrincipalThings": {
+            "main": "./lib/actions/ListPrincipalThings.js",
+            "title": "Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. ",
+            "description": "Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPrincipalThings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteRegistrationCode": {
+            "main": "./lib/actions/DeleteRegistrationCode.js",
+            "title": "Deletes a CA certificate registration code.",
+            "description": "Deletes a CA certificate registration code.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteRegistrationCode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetRegistrationCode": {
+            "main": "./lib/actions/GetRegistrationCode.js",
+            "title": "Gets a registration code used to register a CA certificate with AWS IoT.",
+            "description": "Gets a registration code used to register a CA certificate with AWS IoT.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetRegistrationCode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RejectCertificateTransfer": {
+            "main": "./lib/actions/RejectCertificateTransfer.js",
+            "title": "<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>",
+            "description": "<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RejectCertificateTransfer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListRoleAliases": {
+            "main": "./lib/actions/ListRoleAliases.js",
+            "title": "Lists the role aliases registered in your account.",
+            "description": "Lists the role aliases registered in your account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListRoleAliases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteRoleAlias": {
+            "main": "./lib/actions/DeleteRoleAlias.js",
+            "title": "Deletes a role alias",
+            "description": "Deletes a role alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteRoleAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeRoleAlias": {
+            "main": "./lib/actions/DescribeRoleAlias.js",
+            "title": "Describes a role alias.",
+            "description": "Describes a role alias.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeRoleAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateRoleAlias": {
+            "main": "./lib/actions/CreateRoleAlias.js",
+            "title": "Creates a role alias.",
+            "description": "Creates a role alias.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateRoleAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateRoleAlias": {
+            "main": "./lib/actions/UpdateRoleAlias.js",
+            "title": "Updates a role alias.",
+            "description": "Updates a role alias.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateRoleAlias.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTopicRules": {
+            "main": "./lib/actions/ListTopicRules.js",
+            "title": "Lists the rules for the specific topic.",
+            "description": "Lists the rules for the specific topic.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTopicRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteTopicRule": {
+            "main": "./lib/actions/DeleteTopicRule.js",
+            "title": "Deletes the rule.",
+            "description": "Deletes the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetTopicRule": {
+            "main": "./lib/actions/GetTopicRule.js",
+            "title": "Gets information about the rule.",
+            "description": "Gets information about the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReplaceTopicRule": {
+            "main": "./lib/actions/ReplaceTopicRule.js",
+            "title": "Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "description": "Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReplaceTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateTopicRule": {
+            "main": "./lib/actions/CreateTopicRule.js",
+            "title": "Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "description": "Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisableTopicRule": {
+            "main": "./lib/actions/DisableTopicRule.js",
+            "title": "Disables the rule.",
+            "description": "Disables the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisableTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EnableTopicRule": {
+            "main": "./lib/actions/EnableTopicRule.js",
+            "title": "Enables the rule.",
+            "description": "Enables the rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EnableTopicRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ValidateSecurityProfileBehaviors": {
+            "main": "./lib/actions/ValidateSecurityProfileBehaviors.js",
+            "title": "Validates a Device Defender security profile behaviors specification.",
+            "description": "Validates a Device Defender security profile behaviors specification.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ValidateSecurityProfileBehaviors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListSecurityProfiles": {
+            "main": "./lib/actions/ListSecurityProfiles.js",
+            "title": "Lists the Device Defender security profiles you have created. You can use filters to list only those security profiles associated with a thing group or only those associated with your account.",
+            "description": "Lists the Device Defender security profiles you have created. You can use filters to list only those security profiles associated with a thing group or only those associated with your account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListSecurityProfiles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListSecurityProfilesForTarget": {
+            "main": "./lib/actions/ListSecurityProfilesForTarget.js",
+            "title": "Lists the Device Defender security profiles attached to a target (thing group).",
+            "description": "Lists the Device Defender security profiles attached to a target (thing group).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListSecurityProfilesForTarget.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteSecurityProfile": {
+            "main": "./lib/actions/DeleteSecurityProfile.js",
+            "title": "Deletes a Device Defender security profile.",
+            "description": "Deletes a Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeSecurityProfile": {
+            "main": "./lib/actions/DescribeSecurityProfile.js",
+            "title": "Gets information about a Device Defender security profile.",
+            "description": "Gets information about a Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateSecurityProfile": {
+            "main": "./lib/actions/UpdateSecurityProfile.js",
+            "title": "Updates a Device Defender security profile.",
+            "description": "Updates a Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSecurityProfile": {
+            "main": "./lib/actions/CreateSecurityProfile.js",
+            "title": "Creates a Device Defender security profile.",
+            "description": "Creates a Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DetachSecurityProfile": {
+            "main": "./lib/actions/DetachSecurityProfile.js",
+            "title": "Disassociates a Device Defender security profile from a thing group or from this account.",
+            "description": "Disassociates a Device Defender security profile from a thing group or from this account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DetachSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTargetsForSecurityProfile": {
+            "main": "./lib/actions/ListTargetsForSecurityProfile.js",
+            "title": "Lists the targets (thing groups) associated with a given Device Defender security profile.",
+            "description": "Lists the targets (thing groups) associated with a given Device Defender security profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTargetsForSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AttachSecurityProfile": {
+            "main": "./lib/actions/AttachSecurityProfile.js",
+            "title": "Associates a Device Defender security profile with a thing group or with this account. Each thing group or account can have up to five security profiles associated with it.",
+            "description": "Associates a Device Defender security profile with a thing group or with this account. Each thing group or account can have up to five security profiles associated with it.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AttachSecurityProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListStreams": {
+            "main": "./lib/actions/ListStreams.js",
+            "title": "Lists all of the streams in your AWS account.",
+            "description": "Lists all of the streams in your AWS account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListStreams.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteStream": {
+            "main": "./lib/actions/DeleteStream.js",
+            "title": "Deletes a stream.",
+            "description": "Deletes a stream.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeStream": {
+            "main": "./lib/actions/DescribeStream.js",
+            "title": "Gets information about a stream.",
+            "description": "Gets information about a stream.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateStream": {
+            "main": "./lib/actions/CreateStream.js",
+            "title": "Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted within last 90 days, we will resurrect that old stream by incrementing the version by 1.",
+            "description": "Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted within last 90 days, we will resurrect that old stream by incrementing the version by 1.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateStream": {
+            "main": "./lib/actions/UpdateStream.js",
+            "title": "Updates an existing stream. The stream version will be incremented by one.",
+            "description": "Updates an existing stream. The stream version will be incremented by one.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateStream.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTagsForResource": {
+            "main": "./lib/actions/ListTagsForResource.js",
+            "title": "Lists the tags (metadata) you have assigned to the resource.",
+            "description": "Lists the tags (metadata) you have assigned to the resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTagsForResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagResource": {
+            "main": "./lib/actions/TagResource.js",
+            "title": "Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.",
+            "description": "Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DetachPolicy": {
+            "main": "./lib/actions/DetachPolicy.js",
+            "title": "Detaches a policy from the specified target.",
+            "description": "Detaches a policy from the specified target.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DetachPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AttachPolicy": {
+            "main": "./lib/actions/AttachPolicy.js",
+            "title": "Attaches a policy to the specified target.",
+            "description": "Attaches a policy to the specified target.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AttachPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TestAuthorization": {
+            "main": "./lib/actions/TestAuthorization.js",
+            "title": "Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "description": "Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TestAuthorization.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingGroups": {
+            "main": "./lib/actions/ListThingGroups.js",
+            "title": "List the thing groups in your account.",
+            "description": "List the thing groups in your account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AddThingToThingGroup": {
+            "main": "./lib/actions/AddThingToThingGroup.js",
+            "title": "Adds a thing to a thing group.",
+            "description": "Adds a thing to a thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AddThingToThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RemoveThingFromThingGroup": {
+            "main": "./lib/actions/RemoveThingFromThingGroup.js",
+            "title": "Remove the specified thing from the specified group.",
+            "description": "Remove the specified thing from the specified group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RemoveThingFromThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateThingGroupsForThing": {
+            "main": "./lib/actions/UpdateThingGroupsForThing.js",
+            "title": "Updates the groups to which the thing belongs.",
+            "description": "Updates the groups to which the thing belongs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateThingGroupsForThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteThingGroup": {
+            "main": "./lib/actions/DeleteThingGroup.js",
+            "title": "Deletes a thing group.",
+            "description": "Deletes a thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeThingGroup": {
+            "main": "./lib/actions/DescribeThingGroup.js",
+            "title": "Describe a thing group.",
+            "description": "Describe a thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateThingGroup": {
+            "main": "./lib/actions/UpdateThingGroup.js",
+            "title": "Update a thing group.",
+            "description": "Update a thing group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateThingGroup": {
+            "main": "./lib/actions/CreateThingGroup.js",
+            "title": "<p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "description": "<p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingsInThingGroup": {
+            "main": "./lib/actions/ListThingsInThingGroup.js",
+            "title": "Lists the things in the specified group.",
+            "description": "Lists the things in the specified group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingsInThingGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingRegistrationTasks": {
+            "main": "./lib/actions/ListThingRegistrationTasks.js",
+            "title": "List bulk thing provisioning tasks.",
+            "description": "List bulk thing provisioning tasks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingRegistrationTasks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StartThingRegistrationTask": {
+            "main": "./lib/actions/StartThingRegistrationTask.js",
+            "title": "Creates a bulk thing provisioning task.",
+            "description": "Creates a bulk thing provisioning task.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StartThingRegistrationTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeThingRegistrationTask": {
+            "main": "./lib/actions/DescribeThingRegistrationTask.js",
+            "title": "Describes a bulk thing provisioning task.",
+            "description": "Describes a bulk thing provisioning task.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeThingRegistrationTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StopThingRegistrationTask": {
+            "main": "./lib/actions/StopThingRegistrationTask.js",
+            "title": "Cancels a bulk thing provisioning task.",
+            "description": "Cancels a bulk thing provisioning task.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StopThingRegistrationTask.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingRegistrationTaskReports": {
+            "main": "./lib/actions/ListThingRegistrationTaskReports.js",
+            "title": "Information about the thing registration tasks.",
+            "description": "Information about the thing registration tasks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingRegistrationTaskReports.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingTypes": {
+            "main": "./lib/actions/ListThingTypes.js",
+            "title": "Lists the existing thing types.",
+            "description": "Lists the existing thing types.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteThingType": {
+            "main": "./lib/actions/DeleteThingType.js",
+            "title": "Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.",
+            "description": "Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteThingType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeThingType": {
+            "main": "./lib/actions/DescribeThingType.js",
+            "title": "Gets information about the specified thing type.",
+            "description": "Gets information about the specified thing type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeThingType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateThingType": {
+            "main": "./lib/actions/CreateThingType.js",
+            "title": "Creates a new thing type.",
+            "description": "Creates a new thing type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateThingType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeprecateThingType": {
+            "main": "./lib/actions/DeprecateThingType.js",
+            "title": "Deprecates a thing type. You can not associate new things with deprecated thing type.",
+            "description": "Deprecates a thing type. You can not associate new things with deprecated thing type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeprecateThingType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThings": {
+            "main": "./lib/actions/ListThings.js",
+            "title": "Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. ",
+            "description": "Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RegisterThing": {
+            "main": "./lib/actions/RegisterThing.js",
+            "title": "Provisions a thing.",
+            "description": "Provisions a thing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RegisterThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteThing": {
+            "main": "./lib/actions/DeleteThing.js",
+            "title": "Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.",
+            "description": "Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeThing": {
+            "main": "./lib/actions/DescribeThing.js",
+            "title": "Gets information about the specified thing.",
+            "description": "Gets information about the specified thing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateThing": {
+            "main": "./lib/actions/UpdateThing.js",
+            "title": "Updates the data for a thing.",
+            "description": "Updates the data for a thing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateThing": {
+            "main": "./lib/actions/CreateThing.js",
+            "title": "<p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "description": "<p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListJobExecutionsForThing": {
+            "main": "./lib/actions/ListJobExecutionsForThing.js",
+            "title": "Lists the job executions for the specified thing.",
+            "description": "Lists the job executions for the specified thing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListJobExecutionsForThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeJobExecution": {
+            "main": "./lib/actions/DescribeJobExecution.js",
+            "title": "Describes a job execution.",
+            "description": "Describes a job execution.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeJobExecution.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CancelJobExecution": {
+            "main": "./lib/actions/CancelJobExecution.js",
+            "title": "Cancels the execution of a job for a given thing.",
+            "description": "Cancels the execution of a job for a given thing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CancelJobExecution.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteJobExecution": {
+            "main": "./lib/actions/DeleteJobExecution.js",
+            "title": "Deletes a job execution.",
+            "description": "Deletes a job execution.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteJobExecution.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DetachThingPrincipal": {
+            "main": "./lib/actions/DetachThingPrincipal.js",
+            "title": "<p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>",
+            "description": "<p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DetachThingPrincipal.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingPrincipals": {
+            "main": "./lib/actions/ListThingPrincipals.js",
+            "title": "Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "description": "Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingPrincipals.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AttachThingPrincipal": {
+            "main": "./lib/actions/AttachThingPrincipal.js",
+            "title": "Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "description": "Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AttachThingPrincipal.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListThingGroupsForThing": {
+            "main": "./lib/actions/ListThingGroupsForThing.js",
+            "title": "List the thing groups to which the specified thing belongs.",
+            "description": "List the thing groups to which the specified thing belongs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListThingGroupsForThing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TransferCertificate": {
+            "main": "./lib/actions/TransferCertificate.js",
+            "title": "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>",
+            "description": "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TransferCertificate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UntagResource": {
+            "main": "./lib/actions/UntagResource.js",
+            "title": "Removes the given tags (metadata) from the resource.",
+            "description": "Removes the given tags (metadata) from the resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UntagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteV2LoggingLevel": {
+            "main": "./lib/actions/DeleteV2LoggingLevel.js",
+            "title": "Deletes a logging level.",
+            "description": "Deletes a logging level.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteV2LoggingLevel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListV2LoggingLevels": {
+            "main": "./lib/actions/ListV2LoggingLevels.js",
+            "title": "Lists logging levels.",
+            "description": "Lists logging levels.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListV2LoggingLevels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetV2LoggingLevel": {
+            "main": "./lib/actions/SetV2LoggingLevel.js",
+            "title": "Sets the logging level.",
+            "description": "Sets the logging level.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetV2LoggingLevel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetV2LoggingOptions": {
+            "main": "./lib/actions/GetV2LoggingOptions.js",
+            "title": "Gets the fine grained logging options.",
+            "description": "Gets the fine grained logging options.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetV2LoggingOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetV2LoggingOptions": {
+            "main": "./lib/actions/SetV2LoggingOptions.js",
+            "title": "Sets the logging options for the V2 logging service.",
+            "description": "Sets the logging options for the V2 logging service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetV2LoggingOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListViolationEvents": {
+            "main": "./lib/actions/ListViolationEvents.js",
+            "title": "Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior or thing (device).",
+            "description": "Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior or thing (device).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListViolationEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

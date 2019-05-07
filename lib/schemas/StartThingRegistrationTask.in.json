@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "inputFileBucket": {
+                    "description": "The S3 bucket that contains the input file.",
+                    "maxLength": 256,
+                    "minLength": 3,
+                    "pattern": "[a-zA-Z0-9._-]+",
+                    "type": "string"
+                },
+                "inputFileKey": {
+                    "description": "The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).",
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9!_.*'()-\\/]+",
+                    "type": "string"
+                },
+                "roleArn": {
+                    "description": "The IAM role ARN that grants permission the input file.",
+                    "maxLength": 2048,
+                    "minLength": 20,
+                    "type": "string"
+                },
+                "templateBody": {
+                    "description": "The provisioning template.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "templateBody",
+                "inputFileBucket",
+                "inputFileKey",
+                "roleArn"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

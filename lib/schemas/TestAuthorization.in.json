@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "authInfos": {
+                    "description": "A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.",
+                    "items": {
+                        "description": "A collection of authorization information.",
+                        "properties": {
+                            "actionType": {
+                                "description": "The type of action for which the principal is being authorized.",
+                                "enum": [
+                                    "PUBLISH",
+                                    "SUBSCRIBE",
+                                    "RECEIVE",
+                                    "CONNECT"
+                                ],
+                                "type": "string"
+                            },
+                            "resources": {
+                                "description": "The resources for which the principal is being authorized to perform the specified action.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "cognitoIdentityPoolId": {
+                    "description": "The Cognito identity pool ID.",
+                    "type": "string"
+                },
+                "policyNamesToAdd": {
+                    "description": "When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.",
+                    "items": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "[\\w+=,.@-]+",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "policyNamesToSkip": {
+                    "description": "When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.",
+                    "items": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "[\\w+=,.@-]+",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "principal": {
+                    "description": "The principal.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "authInfos"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

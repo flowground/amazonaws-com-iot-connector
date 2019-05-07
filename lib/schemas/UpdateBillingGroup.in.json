@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "billingGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "billingGroupProperties": {
+                    "description": "The properties of the billing group.",
+                    "properties": {
+                        "billingGroupDescription": {
+                            "description": "The description of the billing group.",
+                            "maxLength": 2028,
+                            "pattern": "[\\p{Graph}\\x20]*",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "expectedVersion": {
+                    "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "billingGroupProperties"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

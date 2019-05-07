@@ -1,0 +1,185 @@
+{
+    "type": "object",
+    "properties": {
+        "jobId": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "abortConfig": {
+                    "description": "Allows you to create criteria to abort a job.",
+                    "properties": {
+                        "criteriaList": {
+                            "description": "The list of abort criteria to define rules to abort the job.",
+                            "items": {
+                                "description": "Details of abort criteria to define rules to abort the job.",
+                                "properties": {
+                                    "action": {
+                                        "description": "The type of abort action to initiate a job abort.",
+                                        "enum": [
+                                            "CANCEL"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "failureType": {
+                                        "description": "The type of job execution failure to define a rule to initiate a job abort.",
+                                        "enum": [
+                                            "FAILED",
+                                            "REJECTED",
+                                            "TIMED_OUT",
+                                            "ALL"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "minNumberOfExecutedThings": {
+                                        "description": "Minimum number of executed things before evaluating an abort rule.",
+                                        "minimum": 1,
+                                        "type": "integer"
+                                    },
+                                    "thresholdPercentage": {
+                                        "description": "<p>The threshold as a percentage of the total number of executed things that will initiate a job abort.</p> <p>AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>",
+                                        "format": "double",
+                                        "maximum": 100,
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "failureType",
+                                    "action",
+                                    "thresholdPercentage",
+                                    "minNumberOfExecutedThings"
+                                ],
+                                "type": "object"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "criteriaList"
+                    ],
+                    "type": "object"
+                },
+                "description": {
+                    "description": "A short text description of the job.",
+                    "maxLength": 2028,
+                    "pattern": "[^\\p{C}]+",
+                    "type": "string"
+                },
+                "jobExecutionsRolloutConfig": {
+                    "description": "Allows you to create a staged rollout of the job.",
+                    "properties": {
+                        "exponentialRate": {
+                            "description": "The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.",
+                            "properties": {
+                                "baseRatePerMinute": {
+                                    "description": "The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.",
+                                    "maximum": 1000,
+                                    "minimum": 1,
+                                    "type": "integer"
+                                },
+                                "incrementFactor": {
+                                    "description": "The exponential factor to increase the rate of rollout for a job.",
+                                    "format": "double",
+                                    "maximum": 5,
+                                    "minimum": 1,
+                                    "type": "number"
+                                },
+                                "rateIncreaseCriteria": {
+                                    "description": "<p>The criteria to initiate the increase in rate of rollout for a job.</p> <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>",
+                                    "properties": {
+                                        "numberOfNotifiedThings": {
+                                            "description": "The threshold for number of notified things that will initiate the increase in rate of rollout.",
+                                            "minimum": 1,
+                                            "type": "integer"
+                                        },
+                                        "numberOfSucceededThings": {
+                                            "description": "The threshold for number of succeeded things that will initiate the increase in rate of rollout.",
+                                            "minimum": 1,
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "baseRatePerMinute",
+                                "incrementFactor",
+                                "rateIncreaseCriteria"
+                            ],
+                            "type": "object"
+                        },
+                        "maximumPerMinute": {
+                            "description": "The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.",
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "presignedUrlConfig": {
+                    "description": "Configuration information for pre-signed S3 URLs.",
+                    "properties": {
+                        "expiresInSec": {
+                            "description": "How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.",
+                            "maximum": 3600,
+                            "minimum": 60,
+                            "type": "integer"
+                        },
+                        "roleArn": {
+                            "description": "The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.",
+                            "maxLength": 2048,
+                            "minLength": 20,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "timeoutConfig": {
+                    "description": "Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. ",
+                    "properties": {
+                        "inProgressTimeoutInMinutes": {
+                            "description": "Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

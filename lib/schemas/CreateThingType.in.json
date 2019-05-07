@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "thingTypeName": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The input for the CreateThingType operation.",
+            "properties": {
+                "tags": {
+                    "description": "Metadata which can be used to manage the thing type.",
+                    "items": {
+                        "description": "A set of key/value pairs that are used to manage the resource.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag's key.",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The tag's value.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "thingTypeProperties": {
+                    "description": "The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.",
+                    "properties": {
+                        "searchableAttributes": {
+                            "description": "A list of searchable thing attribute names.",
+                            "items": {
+                                "maxLength": 128,
+                                "pattern": "[a-zA-Z0-9_.,@/:#-]+",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "thingTypeDescription": {
+                            "description": "The description of the thing type.",
+                            "maxLength": 2028,
+                            "pattern": "[\\p{Graph}\\x20]*",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

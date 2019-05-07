@@ -1,0 +1,96 @@
+{
+    "type": "object",
+    "properties": {
+        "streamId": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "description": "The description of the stream.",
+                    "maxLength": 2028,
+                    "pattern": "[^\\p{C}]+",
+                    "type": "string"
+                },
+                "files": {
+                    "description": "The files associated with the stream.",
+                    "items": {
+                        "description": "Represents a file to stream.",
+                        "properties": {
+                            "fileId": {
+                                "description": "The file ID.",
+                                "maximum": 255,
+                                "minimum": 0,
+                                "type": "integer"
+                            },
+                            "s3Location": {
+                                "description": "The location of the file in S3.",
+                                "properties": {
+                                    "bucket": {
+                                        "description": "The S3 bucket.",
+                                        "minLength": 1,
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "description": "The S3 key.",
+                                        "minLength": 1,
+                                        "type": "string"
+                                    },
+                                    "version": {
+                                        "description": "The S3 bucket version.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "roleArn": {
+                    "description": "An IAM role that allows the IoT service principal assumes to access your S3 files.",
+                    "maxLength": 2048,
+                    "minLength": 20,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

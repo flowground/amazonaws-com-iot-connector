@@ -1,0 +1,130 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "checkName": {
+                    "description": "A filter to limit results to the findings for the specified audit check.",
+                    "type": "string"
+                },
+                "endTime": {
+                    "description": "A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "maxResults": {
+                    "description": "The maximum number of results to return at one time. The default is 25.",
+                    "maximum": 250,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "nextToken": {
+                    "description": "The token for the next set of results.",
+                    "type": "string"
+                },
+                "resourceIdentifier": {
+                    "description": "Information identifying the non-compliant resource.",
+                    "properties": {
+                        "account": {
+                            "description": "The account with which the resource is associated.",
+                            "maxLength": 12,
+                            "minLength": 12,
+                            "pattern": "[0-9]+",
+                            "type": "string"
+                        },
+                        "caCertificateId": {
+                            "description": "The ID of the CA certificate used to authorize the certificate.",
+                            "maxLength": 64,
+                            "minLength": 64,
+                            "pattern": "(0x)?[a-fA-F0-9]+",
+                            "type": "string"
+                        },
+                        "clientId": {
+                            "description": "The client ID.",
+                            "type": "string"
+                        },
+                        "cognitoIdentityPoolId": {
+                            "description": "The ID of the Cognito Identity Pool.",
+                            "type": "string"
+                        },
+                        "deviceCertificateId": {
+                            "description": "The ID of the certificate attached to the resource.",
+                            "maxLength": 64,
+                            "minLength": 64,
+                            "pattern": "(0x)?[a-fA-F0-9]+",
+                            "type": "string"
+                        },
+                        "policyVersionIdentifier": {
+                            "description": "The version of the policy associated with the resource.",
+                            "properties": {
+                                "policyName": {
+                                    "description": "The name of the policy.",
+                                    "maxLength": 128,
+                                    "minLength": 1,
+                                    "pattern": "[\\w+=,.@-]+",
+                                    "type": "string"
+                                },
+                                "policyVersionId": {
+                                    "description": "The ID of the version of the policy associated with the resource.",
+                                    "pattern": "[0-9]+",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "startTime": {
+                    "description": "A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "taskId": {
+                    "description": "A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.",
+                    "maxLength": 40,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9\\-]+",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

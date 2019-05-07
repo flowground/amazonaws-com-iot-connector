@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "roleAlias": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "credentialDurationSeconds": {
+                    "description": "The number of seconds the credential will be valid.",
+                    "maximum": 3600,
+                    "minimum": 900,
+                    "type": "integer"
+                },
+                "roleArn": {
+                    "description": "The role ARN.",
+                    "maxLength": 2048,
+                    "minLength": 20,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

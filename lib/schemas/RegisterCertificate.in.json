@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The input to the RegisterCertificate operation.",
+            "properties": {
+                "caCertificatePem": {
+                    "description": "The CA certificate used to sign the device certificate being registered.",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "certificatePem": {
+                    "description": "The certificate data, in PEM format.",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "status": {
+                    "description": "The status of the register certificate request.",
+                    "enum": [
+                        "ACTIVE",
+                        "INACTIVE",
+                        "REVOKED",
+                        "PENDING_TRANSFER",
+                        "REGISTER_INACTIVE",
+                        "PENDING_ACTIVATION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "certificatePem"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

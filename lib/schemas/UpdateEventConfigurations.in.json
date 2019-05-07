@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "eventConfigurations": {
+                    "description": "The new event configuration values.",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "enum": [
+                                    "THING",
+                                    "THING_GROUP",
+                                    "THING_TYPE",
+                                    "THING_GROUP_MEMBERSHIP",
+                                    "THING_GROUP_HIERARCHY",
+                                    "THING_TYPE_ASSOCIATION",
+                                    "JOB",
+                                    "JOB_EXECUTION",
+                                    "POLICY",
+                                    "CERTIFICATE",
+                                    "CA_CERTIFICATE"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "Configuration.",
+                                "properties": {
+                                    "Enabled": {
+                                        "description": "True to enable the configuration.",
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

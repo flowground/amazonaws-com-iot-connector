@@ -1,0 +1,960 @@
+{
+    "type": "object",
+    "properties": {
+        "ruleName": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The input for the ReplaceTopicRule operation.",
+            "properties": {
+                "topicRulePayload": {
+                    "description": "The rule payload.",
+                    "properties": {
+                        "actions": {
+                            "description": "The actions associated with the rule.",
+                            "items": {
+                                "description": "Describes the actions associated with a rule.",
+                                "properties": {
+                                    "cloudwatchAlarm": {
+                                        "description": "Change the state of a CloudWatch alarm.",
+                                        "properties": {
+                                            "alarmName": {
+                                                "description": "The CloudWatch alarm name.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The IAM role that allows access to the CloudWatch alarm.",
+                                                "type": "string"
+                                            },
+                                            "stateReason": {
+                                                "description": "The reason for the alarm change.",
+                                                "type": "string"
+                                            },
+                                            "stateValue": {
+                                                "description": "The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "alarmName",
+                                            "stateReason",
+                                            "stateValue"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "cloudwatchMetric": {
+                                        "description": "Capture a CloudWatch metric.",
+                                        "properties": {
+                                            "metricName": {
+                                                "description": "The CloudWatch metric name.",
+                                                "type": "string"
+                                            },
+                                            "metricNamespace": {
+                                                "description": "The CloudWatch metric namespace name.",
+                                                "type": "string"
+                                            },
+                                            "metricTimestamp": {
+                                                "description": "An optional <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Unix timestamp</a>.",
+                                                "type": "string"
+                                            },
+                                            "metricUnit": {
+                                                "description": "The <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit\">metric unit</a> supported by CloudWatch.",
+                                                "type": "string"
+                                            },
+                                            "metricValue": {
+                                                "description": "The CloudWatch metric value.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The IAM role that allows access to the CloudWatch metric.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "metricNamespace",
+                                            "metricName",
+                                            "metricValue",
+                                            "metricUnit"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "dynamoDB": {
+                                        "description": "Write to a DynamoDB table.",
+                                        "properties": {
+                                            "hashKeyField": {
+                                                "description": "The hash key name.",
+                                                "type": "string"
+                                            },
+                                            "hashKeyType": {
+                                                "description": "The hash key type. Valid values are \"STRING\" or \"NUMBER\"",
+                                                "enum": [
+                                                    "STRING",
+                                                    "NUMBER"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "hashKeyValue": {
+                                                "description": "The hash key value.",
+                                                "type": "string"
+                                            },
+                                            "operation": {
+                                                "description": "The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.",
+                                                "type": "string"
+                                            },
+                                            "payloadField": {
+                                                "description": "The action payload. This name can be customized.",
+                                                "type": "string"
+                                            },
+                                            "rangeKeyField": {
+                                                "description": "The range key name.",
+                                                "type": "string"
+                                            },
+                                            "rangeKeyType": {
+                                                "description": "The range key type. Valid values are \"STRING\" or \"NUMBER\"",
+                                                "enum": [
+                                                    "STRING",
+                                                    "NUMBER"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "rangeKeyValue": {
+                                                "description": "The range key value.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access to the DynamoDB table.",
+                                                "type": "string"
+                                            },
+                                            "tableName": {
+                                                "description": "The name of the DynamoDB table.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "tableName",
+                                            "roleArn",
+                                            "hashKeyField",
+                                            "hashKeyValue"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "dynamoDBv2": {
+                                        "description": "Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.",
+                                        "properties": {
+                                            "putItem": {
+                                                "description": "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p> <code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code> </p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+                                                "properties": {
+                                                    "tableName": {
+                                                        "description": "The table where the message data will be written",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "tableName"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access to the DynamoDB table.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "putItem"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "elasticsearch": {
+                                        "description": "Write data to an Amazon Elasticsearch Service domain.",
+                                        "properties": {
+                                            "endpoint": {
+                                                "description": "The endpoint of your Elasticsearch domain.",
+                                                "pattern": "https?://.*",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "The unique identifier for the document you are storing.",
+                                                "type": "string"
+                                            },
+                                            "index": {
+                                                "description": "The Elasticsearch index where you want to store your data.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The IAM role ARN that has access to Elasticsearch.",
+                                                "type": "string"
+                                            },
+                                            "type": {
+                                                "description": "The type of document you are storing.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "endpoint",
+                                            "index",
+                                            "type",
+                                            "id"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "firehose": {
+                                        "description": "Write to an Amazon Kinesis Firehose stream.",
+                                        "properties": {
+                                            "deliveryStreamName": {
+                                                "description": "The delivery stream name.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The IAM role that grants access to the Amazon Kinesis Firehose stream.",
+                                                "type": "string"
+                                            },
+                                            "separator": {
+                                                "description": "A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\\n' (newline), '\\t' (tab), '\\r\\n' (Windows newline), ',' (comma).",
+                                                "pattern": "([\\n\\t])|(\\r\\n)|(,)",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "deliveryStreamName"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "iotAnalytics": {
+                                        "description": "Sends message data to an AWS IoT Analytics channel.",
+                                        "properties": {
+                                            "channelArn": {
+                                                "description": "(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.",
+                                                "type": "string"
+                                            },
+                                            "channelName": {
+                                                "description": "The name of the IoT Analytics channel to which message data will be sent.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "iotEvents": {
+                                        "description": "Sends an input to an AWS IoT Events detector.",
+                                        "properties": {
+                                            "inputName": {
+                                                "description": "The name of the AWS IoT Events input.",
+                                                "maxLength": 128,
+                                                "minLength": 1,
+                                                "type": "string"
+                                            },
+                                            "messageId": {
+                                                "description": "[Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS IoT Events detector.",
+                                                "maxLength": 128,
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector. (\"Action\":\"iotevents:BatchPutMessage\").",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "inputName",
+                                            "roleArn"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "kinesis": {
+                                        "description": "Write data to an Amazon Kinesis stream.",
+                                        "properties": {
+                                            "partitionKey": {
+                                                "description": "The partition key.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access to the Amazon Kinesis stream.",
+                                                "type": "string"
+                                            },
+                                            "streamName": {
+                                                "description": "The name of the Amazon Kinesis stream.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "streamName"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "lambda": {
+                                        "description": "Invoke a Lambda function.",
+                                        "properties": {
+                                            "functionArn": {
+                                                "description": "The ARN of the Lambda function.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "functionArn"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "republish": {
+                                        "description": "Publish to another MQTT topic.",
+                                        "properties": {
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access.",
+                                                "type": "string"
+                                            },
+                                            "topic": {
+                                                "description": "The name of the MQTT topic.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "topic"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "s3": {
+                                        "description": "Write to an Amazon S3 bucket.",
+                                        "properties": {
+                                            "bucketName": {
+                                                "description": "The Amazon S3 bucket.",
+                                                "type": "string"
+                                            },
+                                            "cannedAcl": {
+                                                "description": "The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl\">S3 canned ACLs</a>.",
+                                                "enum": [
+                                                    "private",
+                                                    "public-read",
+                                                    "public-read-write",
+                                                    "aws-exec-read",
+                                                    "authenticated-read",
+                                                    "bucket-owner-read",
+                                                    "bucket-owner-full-control",
+                                                    "log-delivery-write"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "key": {
+                                                "description": "The object key.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "bucketName",
+                                            "key"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "salesforce": {
+                                        "description": "Send a message to a Salesforce IoT Cloud Input Stream.",
+                                        "properties": {
+                                            "token": {
+                                                "description": "The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.",
+                                                "minLength": 40,
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "description": "The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.",
+                                                "maxLength": 2000,
+                                                "pattern": "https://ingestion-[a-zA-Z0-9]{1,12}\\.[a-zA-Z0-9]+\\.((sfdc-matrix\\.net)|(sfdcnow\\.com))/streams/\\w{1,20}/\\w{1,20}/event",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "token",
+                                            "url"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "sns": {
+                                        "description": "Publish to an Amazon SNS topic.",
+                                        "properties": {
+                                            "messageFormat": {
+                                                "description": "(Optional) The message format of the message to publish. Accepted values are \"JSON\" and \"RAW\". The default value of the attribute is \"RAW\". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href=\"https://docs.aws.amazon.com/sns/latest/dg/json-formats.html\">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.",
+                                                "enum": [
+                                                    "RAW",
+                                                    "JSON"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access.",
+                                                "type": "string"
+                                            },
+                                            "targetArn": {
+                                                "description": "The ARN of the SNS topic.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "targetArn",
+                                            "roleArn"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "sqs": {
+                                        "description": "Publish to an Amazon SQS queue.",
+                                        "properties": {
+                                            "queueUrl": {
+                                                "description": "The URL of the Amazon SQS queue.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the IAM role that grants access.",
+                                                "type": "string"
+                                            },
+                                            "useBase64": {
+                                                "description": "Specifies whether to use Base64 encoding.",
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        "required": [
+                                            "roleArn",
+                                            "queueUrl"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "stepFunctions": {
+                                        "description": "Starts execution of a Step Functions state machine.",
+                                        "properties": {
+                                            "executionNamePrefix": {
+                                                "description": "(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.",
+                                                "type": "string"
+                                            },
+                                            "roleArn": {
+                                                "description": "The ARN of the role that grants IoT permission to start execution of a state machine (\"Action\":\"states:StartExecution\").",
+                                                "type": "string"
+                                            },
+                                            "stateMachineName": {
+                                                "description": "The name of the Step Functions state machine whose execution will be started.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "stateMachineName",
+                                            "roleArn"
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "maxItems": 10,
+                            "minItems": 0,
+                            "type": "array"
+                        },
+                        "awsIotSqlVersion": {
+                            "description": "The version of the SQL rules engine to use when evaluating the rule.",
+                            "type": "string"
+                        },
+                        "description": {
+                            "description": "The description of the rule.",
+                            "type": "string"
+                        },
+                        "errorAction": {
+                            "description": "The action to take when an error occurs.",
+                            "properties": {
+                                "cloudwatchAlarm": {
+                                    "description": "Change the state of a CloudWatch alarm.",
+                                    "properties": {
+                                        "alarmName": {
+                                            "description": "The CloudWatch alarm name.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The IAM role that allows access to the CloudWatch alarm.",
+                                            "type": "string"
+                                        },
+                                        "stateReason": {
+                                            "description": "The reason for the alarm change.",
+                                            "type": "string"
+                                        },
+                                        "stateValue": {
+                                            "description": "The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "alarmName",
+                                        "stateReason",
+                                        "stateValue"
+                                    ],
+                                    "type": "object"
+                                },
+                                "cloudwatchMetric": {
+                                    "description": "Capture a CloudWatch metric.",
+                                    "properties": {
+                                        "metricName": {
+                                            "description": "The CloudWatch metric name.",
+                                            "type": "string"
+                                        },
+                                        "metricNamespace": {
+                                            "description": "The CloudWatch metric namespace name.",
+                                            "type": "string"
+                                        },
+                                        "metricTimestamp": {
+                                            "description": "An optional <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp\">Unix timestamp</a>.",
+                                            "type": "string"
+                                        },
+                                        "metricUnit": {
+                                            "description": "The <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit\">metric unit</a> supported by CloudWatch.",
+                                            "type": "string"
+                                        },
+                                        "metricValue": {
+                                            "description": "The CloudWatch metric value.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The IAM role that allows access to the CloudWatch metric.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "metricNamespace",
+                                        "metricName",
+                                        "metricValue",
+                                        "metricUnit"
+                                    ],
+                                    "type": "object"
+                                },
+                                "dynamoDB": {
+                                    "description": "Write to a DynamoDB table.",
+                                    "properties": {
+                                        "hashKeyField": {
+                                            "description": "The hash key name.",
+                                            "type": "string"
+                                        },
+                                        "hashKeyType": {
+                                            "description": "The hash key type. Valid values are \"STRING\" or \"NUMBER\"",
+                                            "enum": [
+                                                "STRING",
+                                                "NUMBER"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "hashKeyValue": {
+                                            "description": "The hash key value.",
+                                            "type": "string"
+                                        },
+                                        "operation": {
+                                            "description": "The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.",
+                                            "type": "string"
+                                        },
+                                        "payloadField": {
+                                            "description": "The action payload. This name can be customized.",
+                                            "type": "string"
+                                        },
+                                        "rangeKeyField": {
+                                            "description": "The range key name.",
+                                            "type": "string"
+                                        },
+                                        "rangeKeyType": {
+                                            "description": "The range key type. Valid values are \"STRING\" or \"NUMBER\"",
+                                            "enum": [
+                                                "STRING",
+                                                "NUMBER"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "rangeKeyValue": {
+                                            "description": "The range key value.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access to the DynamoDB table.",
+                                            "type": "string"
+                                        },
+                                        "tableName": {
+                                            "description": "The name of the DynamoDB table.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "tableName",
+                                        "roleArn",
+                                        "hashKeyField",
+                                        "hashKeyValue"
+                                    ],
+                                    "type": "object"
+                                },
+                                "dynamoDBv2": {
+                                    "description": "Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.",
+                                    "properties": {
+                                        "putItem": {
+                                            "description": "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p> <code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code> </p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+                                            "properties": {
+                                                "tableName": {
+                                                    "description": "The table where the message data will be written",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "tableName"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access to the DynamoDB table.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "putItem"
+                                    ],
+                                    "type": "object"
+                                },
+                                "elasticsearch": {
+                                    "description": "Write data to an Amazon Elasticsearch Service domain.",
+                                    "properties": {
+                                        "endpoint": {
+                                            "description": "The endpoint of your Elasticsearch domain.",
+                                            "pattern": "https?://.*",
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "description": "The unique identifier for the document you are storing.",
+                                            "type": "string"
+                                        },
+                                        "index": {
+                                            "description": "The Elasticsearch index where you want to store your data.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The IAM role ARN that has access to Elasticsearch.",
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "description": "The type of document you are storing.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "endpoint",
+                                        "index",
+                                        "type",
+                                        "id"
+                                    ],
+                                    "type": "object"
+                                },
+                                "firehose": {
+                                    "description": "Write to an Amazon Kinesis Firehose stream.",
+                                    "properties": {
+                                        "deliveryStreamName": {
+                                            "description": "The delivery stream name.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The IAM role that grants access to the Amazon Kinesis Firehose stream.",
+                                            "type": "string"
+                                        },
+                                        "separator": {
+                                            "description": "A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\\n' (newline), '\\t' (tab), '\\r\\n' (Windows newline), ',' (comma).",
+                                            "pattern": "([\\n\\t])|(\\r\\n)|(,)",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "deliveryStreamName"
+                                    ],
+                                    "type": "object"
+                                },
+                                "iotAnalytics": {
+                                    "description": "Sends message data to an AWS IoT Analytics channel.",
+                                    "properties": {
+                                        "channelArn": {
+                                            "description": "(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.",
+                                            "type": "string"
+                                        },
+                                        "channelName": {
+                                            "description": "The name of the IoT Analytics channel to which message data will be sent.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "iotEvents": {
+                                    "description": "Sends an input to an AWS IoT Events detector.",
+                                    "properties": {
+                                        "inputName": {
+                                            "description": "The name of the AWS IoT Events input.",
+                                            "maxLength": 128,
+                                            "minLength": 1,
+                                            "type": "string"
+                                        },
+                                        "messageId": {
+                                            "description": "[Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS IoT Events detector.",
+                                            "maxLength": 128,
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector. (\"Action\":\"iotevents:BatchPutMessage\").",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "inputName",
+                                        "roleArn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "kinesis": {
+                                    "description": "Write data to an Amazon Kinesis stream.",
+                                    "properties": {
+                                        "partitionKey": {
+                                            "description": "The partition key.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access to the Amazon Kinesis stream.",
+                                            "type": "string"
+                                        },
+                                        "streamName": {
+                                            "description": "The name of the Amazon Kinesis stream.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "streamName"
+                                    ],
+                                    "type": "object"
+                                },
+                                "lambda": {
+                                    "description": "Invoke a Lambda function.",
+                                    "properties": {
+                                        "functionArn": {
+                                            "description": "The ARN of the Lambda function.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "functionArn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "republish": {
+                                    "description": "Publish to another MQTT topic.",
+                                    "properties": {
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access.",
+                                            "type": "string"
+                                        },
+                                        "topic": {
+                                            "description": "The name of the MQTT topic.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "topic"
+                                    ],
+                                    "type": "object"
+                                },
+                                "s3": {
+                                    "description": "Write to an Amazon S3 bucket.",
+                                    "properties": {
+                                        "bucketName": {
+                                            "description": "The Amazon S3 bucket.",
+                                            "type": "string"
+                                        },
+                                        "cannedAcl": {
+                                            "description": "The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl\">S3 canned ACLs</a>.",
+                                            "enum": [
+                                                "private",
+                                                "public-read",
+                                                "public-read-write",
+                                                "aws-exec-read",
+                                                "authenticated-read",
+                                                "bucket-owner-read",
+                                                "bucket-owner-full-control",
+                                                "log-delivery-write"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "description": "The object key.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "bucketName",
+                                        "key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "salesforce": {
+                                    "description": "Send a message to a Salesforce IoT Cloud Input Stream.",
+                                    "properties": {
+                                        "token": {
+                                            "description": "The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.",
+                                            "minLength": 40,
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "description": "The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.",
+                                            "maxLength": 2000,
+                                            "pattern": "https://ingestion-[a-zA-Z0-9]{1,12}\\.[a-zA-Z0-9]+\\.((sfdc-matrix\\.net)|(sfdcnow\\.com))/streams/\\w{1,20}/\\w{1,20}/event",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "token",
+                                        "url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "sns": {
+                                    "description": "Publish to an Amazon SNS topic.",
+                                    "properties": {
+                                        "messageFormat": {
+                                            "description": "(Optional) The message format of the message to publish. Accepted values are \"JSON\" and \"RAW\". The default value of the attribute is \"RAW\". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href=\"https://docs.aws.amazon.com/sns/latest/dg/json-formats.html\">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.",
+                                            "enum": [
+                                                "RAW",
+                                                "JSON"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access.",
+                                            "type": "string"
+                                        },
+                                        "targetArn": {
+                                            "description": "The ARN of the SNS topic.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "targetArn",
+                                        "roleArn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "sqs": {
+                                    "description": "Publish to an Amazon SQS queue.",
+                                    "properties": {
+                                        "queueUrl": {
+                                            "description": "The URL of the Amazon SQS queue.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the IAM role that grants access.",
+                                            "type": "string"
+                                        },
+                                        "useBase64": {
+                                            "description": "Specifies whether to use Base64 encoding.",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "roleArn",
+                                        "queueUrl"
+                                    ],
+                                    "type": "object"
+                                },
+                                "stepFunctions": {
+                                    "description": "Starts execution of a Step Functions state machine.",
+                                    "properties": {
+                                        "executionNamePrefix": {
+                                            "description": "(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.",
+                                            "type": "string"
+                                        },
+                                        "roleArn": {
+                                            "description": "The ARN of the role that grants IoT permission to start execution of a state machine (\"Action\":\"states:StartExecution\").",
+                                            "type": "string"
+                                        },
+                                        "stateMachineName": {
+                                            "description": "The name of the Step Functions state machine whose execution will be started.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "stateMachineName",
+                                        "roleArn"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "ruleDisabled": {
+                            "description": "Specifies whether the rule is disabled.",
+                            "type": "boolean"
+                        },
+                        "sql": {
+                            "description": "The SQL statement used to query the topic. For more information, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference\">AWS IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "sql",
+                        "actions"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "topicRulePayload"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

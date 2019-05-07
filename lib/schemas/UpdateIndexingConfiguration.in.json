@@ -1,0 +1,89 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "thingGroupIndexingConfiguration": {
+                    "description": "Thing group indexing configuration.",
+                    "properties": {
+                        "thingGroupIndexingMode": {
+                            "description": "Thing group indexing mode.",
+                            "enum": [
+                                "OFF",
+                                "ON"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "thingGroupIndexingMode"
+                    ],
+                    "type": "object"
+                },
+                "thingIndexingConfiguration": {
+                    "description": "Thing indexing configuration.",
+                    "properties": {
+                        "thingConnectivityIndexingMode": {
+                            "description": "<p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS – Your thing index will contain connectivity status. In order to enable thing connectivity indexing, thingIndexMode must not be set to OFF.</p> </li> <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li> </ul>",
+                            "enum": [
+                                "OFF",
+                                "STATUS"
+                            ],
+                            "type": "string"
+                        },
+                        "thingIndexingMode": {
+                            "description": "<p>Thing indexing mode. Valid values are:</p> <ul> <li> <p>REGISTRY – Your thing index will contain only registry data.</p> </li> <li> <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p> </li> <li> <p>OFF - Thing indexing is disabled.</p> </li> </ul>",
+                            "enum": [
+                                "OFF",
+                                "REGISTRY",
+                                "REGISTRY_AND_SHADOW"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "thingIndexingMode"
+                    ],
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

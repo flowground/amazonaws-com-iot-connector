@@ -1,0 +1,104 @@
+{
+    "type": "object",
+    "properties": {
+        "scheduledAuditName": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "dayOfMonth": {
+                    "description": "The day of the month on which the scheduled audit takes place. Can be \"1\" through \"31\" or \"LAST\". This field is required if the \"frequency\" parameter is set to \"MONTHLY\". If days 29-31 are specified, and the month does not have that many days, the audit takes place on the \"LAST\" day of the month.",
+                    "pattern": "^([1-9]|[12][0-9]|3[01])$|^LAST$",
+                    "type": "string"
+                },
+                "dayOfWeek": {
+                    "description": "The day of the week on which the scheduled audit takes place. Can be one of \"SUN\", \"MON\", \"TUE\", \"WED\", \"THU\", \"FRI\" or \"SAT\". This field is required if the \"frequency\" parameter is set to \"WEEKLY\" or \"BIWEEKLY\".",
+                    "enum": [
+                        "SUN",
+                        "MON",
+                        "TUE",
+                        "WED",
+                        "THU",
+                        "FRI",
+                        "SAT"
+                    ],
+                    "type": "string"
+                },
+                "frequency": {
+                    "description": "How often the scheduled audit takes place. Can be one of \"DAILY\", \"WEEKLY\", \"BIWEEKLY\" or \"MONTHLY\". The actual start time of each audit is determined by the system.",
+                    "enum": [
+                        "DAILY",
+                        "WEEKLY",
+                        "BIWEEKLY",
+                        "MONTHLY"
+                    ],
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "Metadata which can be used to manage the scheduled audit.",
+                    "items": {
+                        "description": "A set of key/value pairs that are used to manage the resource.",
+                        "properties": {
+                            "Key": {
+                                "description": "The tag's key.",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The tag's value.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "targetCheckNames": {
+                    "description": "Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)",
+                    "items": {
+                        "description": "An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)",
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "frequency",
+                "targetCheckNames"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "jobId": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "comment": {
+                    "description": "An optional comment string describing why the job was canceled.",
+                    "maxLength": 2028,
+                    "pattern": "[^\\p{C}]+",
+                    "type": "string"
+                },
+                "reasonCode": {
+                    "description": "(Optional)A reason code string that explains why the job was canceled.",
+                    "maxLength": 128,
+                    "pattern": "[\\p{Upper}\\p{Digit}_]+",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

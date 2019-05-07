@@ -1,0 +1,110 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "auditCheckConfigurations": {
+                    "description": "<p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are currently enabled.</p> <p>Note that some data collection may begin immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p> <p>You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code> this parameter is required and must specify at least one enabled check.</p>",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "description": "An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)",
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "Which audit checks are enabled and disabled for this account.",
+                                "properties": {
+                                    "enabled": {
+                                        "description": "True if this audit check is enabled for this account.",
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "auditNotificationTargetConfigurations": {
+                    "description": "Information about the targets to which audit notifications are sent.",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "enum": [
+                                    "SNS"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "Information about the targets to which audit notifications are sent.",
+                                "properties": {
+                                    "enabled": {
+                                        "description": "True if notifications to the target are enabled.",
+                                        "type": "boolean"
+                                    },
+                                    "roleArn": {
+                                        "description": "The ARN of the role that grants permission to send notifications to the target.",
+                                        "maxLength": 2048,
+                                        "minLength": 20,
+                                        "type": "string"
+                                    },
+                                    "targetArn": {
+                                        "description": "The ARN of the target (SNS topic) to which audit notifications are sent.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "roleArn": {
+                    "description": "The ARN of the role that grants permission to AWS IoT to access information about your devices, policies, certificates and other items as necessary when performing an audit.",
+                    "maxLength": 2048,
+                    "minLength": 20,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "defaultLogLevel": {
+                    "description": "The default logging level.",
+                    "enum": [
+                        "DEBUG",
+                        "INFO",
+                        "ERROR",
+                        "WARN",
+                        "DISABLED"
+                    ],
+                    "type": "string"
+                },
+                "disableAllLogs": {
+                    "description": "If true all logs are disabled. The default is false.",
+                    "type": "boolean"
+                },
+                "roleArn": {
+                    "description": "The ARN of the role that allows IoT to write to Cloudwatch logs.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

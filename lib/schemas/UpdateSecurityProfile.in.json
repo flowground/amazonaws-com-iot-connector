@@ -1,0 +1,209 @@
+{
+    "type": "object",
+    "properties": {
+        "securityProfileName": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "additionalMetricsToRetain": {
+                    "description": "A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code> but it is also retained for any metric specified here.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "alertTargets": {
+                    "description": "Where the alerts are sent. (Alerts are always sent to the console.)",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "description": "The type of alert target: one of \"SNS\".",
+                                "enum": [
+                                    "SNS"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "A structure containing the alert target ARN and the role ARN.",
+                                "properties": {
+                                    "alertTargetArn": {
+                                        "description": "The ARN of the notification target to which alerts are sent.",
+                                        "type": "string"
+                                    },
+                                    "roleArn": {
+                                        "description": "The ARN of the role that grants permission to send alerts to the notification target.",
+                                        "maxLength": 2048,
+                                        "minLength": 20,
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "alertTargetArn",
+                                    "roleArn"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "behaviors": {
+                    "description": "Specifies the behaviors that, when violated by a device (thing), cause an alert.",
+                    "items": {
+                        "description": "A Device Defender security profile behavior.",
+                        "properties": {
+                            "criteria": {
+                                "description": "The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.",
+                                "properties": {
+                                    "comparisonOperator": {
+                                        "description": "The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>).",
+                                        "enum": [
+                                            "less-than",
+                                            "less-than-equals",
+                                            "greater-than",
+                                            "greater-than-equals",
+                                            "in-cidr-set",
+                                            "not-in-cidr-set",
+                                            "in-port-set",
+                                            "not-in-port-set"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "consecutiveDatapointsToAlarm": {
+                                        "description": "If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.",
+                                        "maximum": 10,
+                                        "minimum": 1,
+                                        "type": "integer"
+                                    },
+                                    "consecutiveDatapointsToClear": {
+                                        "description": "If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.",
+                                        "maximum": 10,
+                                        "minimum": 1,
+                                        "type": "integer"
+                                    },
+                                    "durationSeconds": {
+                                        "description": "Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank.",
+                                        "type": "integer"
+                                    },
+                                    "statisticalThreshold": {
+                                        "description": "A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.",
+                                        "properties": {
+                                            "statistic": {
+                                                "description": "The percentile which resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.",
+                                                "pattern": "(p0|p0\\.1|p0\\.01|p1|p10|p50|p90|p99|p99\\.9|p99\\.99|p100)",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "value": {
+                                        "description": "The value to be compared with the <code>metric</code>.",
+                                        "properties": {
+                                            "cidrs": {
+                                                "description": "If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.",
+                                                "items": {
+                                                    "maxLength": 43,
+                                                    "minLength": 2,
+                                                    "pattern": "[a-fA-F0-9:\\.\\/]+",
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "count": {
+                                                "description": "If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.",
+                                                "minimum": 0,
+                                                "type": "integer"
+                                            },
+                                            "ports": {
+                                                "description": "If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.",
+                                                "items": {
+                                                    "maximum": 65535,
+                                                    "minimum": 0,
+                                                    "type": "integer"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "metric": {
+                                "description": "What is measured by the behavior.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "The name you have given to the behavior.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "[a-zA-Z0-9:_-]+",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 100,
+                    "type": "array"
+                },
+                "deleteAdditionalMetricsToRetain": {
+                    "description": "If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.",
+                    "type": "boolean"
+                },
+                "deleteAlertTargets": {
+                    "description": "If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation an exception occurs.",
+                    "type": "boolean"
+                },
+                "deleteBehaviors": {
+                    "description": "If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation an exception occurs.",
+                    "type": "boolean"
+                },
+                "securityProfileDescription": {
+                    "description": "A description of the security profile.",
+                    "maxLength": 1000,
+                    "pattern": "[\\p{Graph}\\x20]*",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
