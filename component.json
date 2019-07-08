@@ -1,6 +1,6 @@
 {
     "title": "AWS IoT",
-    "description": "<fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>For more information about how AWS IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for AWS IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to AWS Services</a>.</p>",
+    "description": "AWS IoT AWS IoT provides secure, bi-directional communication between\nInternet-connected devices (such as sensors, actuators, embedded devices, or\nsmart appliances) and the AWS cloud. You can discover your custom IoT-Data\nendpoint to communicate with, configure rules for data processing and\nintegration with other services, organize resources associated with each device\n(Registry), configure logging, and create and manage policies and credentials to\nauthenticate devices.\n\nFor more information about how AWS IoT works, see the Developer Guide\n[https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html]\n.\n\nFor information about how to use the credentials provider for AWS IoT, see \nAuthorizing Direct Calls to AWS Services\n[https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html]\n.",
     "docsUrl": "https://aws.amazon.com/iot/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/iot/2015-05-28/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,8 +38,8 @@
     "actions": {
         "AcceptCertificateTransfer": {
             "main": "./lib/actions/AcceptCertificateTransfer.js",
-            "title": "<p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p>",
-            "description": "<p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p>",
+            "title": "AcceptCertificateTransfer",
+            "description": "Accepts a pending certificate transfer. The default state of the certificate is\nINACTIVE.\n\nTo check for pending certificate transfers, call ListCertificates to enumerate\nyour certificates.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -55,7 +55,7 @@
         },
         "ListActiveViolations": {
             "main": "./lib/actions/ListActiveViolations.js",
-            "title": "Lists the active violations for a given Device Defender security profile.",
+            "title": "ListActiveViolations",
             "description": "Lists the active violations for a given Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "ListAttachedPolicies": {
             "main": "./lib/actions/ListAttachedPolicies.js",
-            "title": "Lists the policies attached to the specified thing group.",
+            "title": "ListAttachedPolicies",
             "description": "Lists the policies attached to the specified thing group.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "DeleteAccountAuditConfiguration": {
             "main": "./lib/actions/DeleteAccountAuditConfiguration.js",
-            "title": "Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled. ",
+            "title": "DeleteAccountAuditConfiguration",
             "description": "Restores the default settings for Device Defender audits for this account. Any configuration data you entered is deleted and all audit checks are reset to disabled. ",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "DescribeAccountAuditConfiguration": {
             "main": "./lib/actions/DescribeAccountAuditConfiguration.js",
-            "title": "Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "title": "DescribeAccountAuditConfiguration",
             "description": "Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "UpdateAccountAuditConfiguration": {
             "main": "./lib/actions/UpdateAccountAuditConfiguration.js",
-            "title": "Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
+            "title": "UpdateAccountAuditConfiguration",
             "description": "Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "ListAuditFindings": {
             "main": "./lib/actions/ListAuditFindings.js",
-            "title": "Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 180 days.)",
+            "title": "ListAuditFindings",
             "description": "Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 180 days.)",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "ListScheduledAudits": {
             "main": "./lib/actions/ListScheduledAudits.js",
-            "title": "Lists all of your scheduled audits.",
+            "title": "ListScheduledAudits",
             "description": "Lists all of your scheduled audits.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "DeleteScheduledAudit": {
             "main": "./lib/actions/DeleteScheduledAudit.js",
-            "title": "Deletes a scheduled audit.",
+            "title": "DeleteScheduledAudit",
             "description": "Deletes a scheduled audit.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "DescribeScheduledAudit": {
             "main": "./lib/actions/DescribeScheduledAudit.js",
-            "title": "Gets information about a scheduled audit.",
+            "title": "DescribeScheduledAudit",
             "description": "Gets information about a scheduled audit.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "UpdateScheduledAudit": {
             "main": "./lib/actions/UpdateScheduledAudit.js",
-            "title": "Updates a scheduled audit, including what checks are performed and how often the audit takes place.",
+            "title": "UpdateScheduledAudit",
             "description": "Updates a scheduled audit, including what checks are performed and how often the audit takes place.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "CreateScheduledAudit": {
             "main": "./lib/actions/CreateScheduledAudit.js",
-            "title": "Creates a scheduled audit that is run at a specified time interval.",
+            "title": "CreateScheduledAudit",
             "description": "Creates a scheduled audit that is run at a specified time interval.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "ListAuditTasks": {
             "main": "./lib/actions/ListAuditTasks.js",
-            "title": "Lists the Device Defender audits that have been performed during a given time period.",
+            "title": "ListAuditTasks",
             "description": "Lists the Device Defender audits that have been performed during a given time period.",
             "fields": {
                 "verbose": {
@@ -259,7 +259,7 @@
         },
         "StartOnDemandAuditTask": {
             "main": "./lib/actions/StartOnDemandAuditTask.js",
-            "title": "Starts an on-demand Device Defender audit.",
+            "title": "StartOnDemandAuditTask",
             "description": "Starts an on-demand Device Defender audit.",
             "fields": {
                 "verbose": {
@@ -276,7 +276,7 @@
         },
         "DescribeAuditTask": {
             "main": "./lib/actions/DescribeAuditTask.js",
-            "title": "Gets information about a Device Defender audit.",
+            "title": "DescribeAuditTask",
             "description": "Gets information about a Device Defender audit.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "CancelAuditTask": {
             "main": "./lib/actions/CancelAuditTask.js",
-            "title": "Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in progress, an \"InvalidRequestException\" occurs.",
+            "title": "CancelAuditTask",
             "description": "Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in progress, an \"InvalidRequestException\" occurs.",
             "fields": {
                 "verbose": {
@@ -310,7 +310,7 @@
         },
         "DeleteAuthorizer": {
             "main": "./lib/actions/DeleteAuthorizer.js",
-            "title": "Deletes an authorizer.",
+            "title": "DeleteAuthorizer",
             "description": "Deletes an authorizer.",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "DescribeAuthorizer": {
             "main": "./lib/actions/DescribeAuthorizer.js",
-            "title": "Describes an authorizer.",
+            "title": "DescribeAuthorizer",
             "description": "Describes an authorizer.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "CreateAuthorizer": {
             "main": "./lib/actions/CreateAuthorizer.js",
-            "title": "Creates an authorizer.",
+            "title": "CreateAuthorizer",
             "description": "Creates an authorizer.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "UpdateAuthorizer": {
             "main": "./lib/actions/UpdateAuthorizer.js",
-            "title": "Updates an authorizer.",
+            "title": "UpdateAuthorizer",
             "description": "Updates an authorizer.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "TestInvokeAuthorizer": {
             "main": "./lib/actions/TestInvokeAuthorizer.js",
-            "title": "Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "title": "TestInvokeAuthorizer",
             "description": "Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the AWS IoT device gateway.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "ListAuthorizers": {
             "main": "./lib/actions/ListAuthorizers.js",
-            "title": "Lists the authorizers registered in your account.",
+            "title": "ListAuthorizers",
             "description": "Lists the authorizers registered in your account.",
             "fields": {
                 "verbose": {
@@ -412,7 +412,7 @@
         },
         "ListBillingGroups": {
             "main": "./lib/actions/ListBillingGroups.js",
-            "title": "Lists the billing groups you have created.",
+            "title": "ListBillingGroups",
             "description": "Lists the billing groups you have created.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "AddThingToBillingGroup": {
             "main": "./lib/actions/AddThingToBillingGroup.js",
-            "title": "Adds a thing to a billing group.",
+            "title": "AddThingToBillingGroup",
             "description": "Adds a thing to a billing group.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "RemoveThingFromBillingGroup": {
             "main": "./lib/actions/RemoveThingFromBillingGroup.js",
-            "title": "Removes the given thing from the billing group.",
+            "title": "RemoveThingFromBillingGroup",
             "description": "Removes the given thing from the billing group.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "DeleteBillingGroup": {
             "main": "./lib/actions/DeleteBillingGroup.js",
-            "title": "Deletes the billing group.",
+            "title": "DeleteBillingGroup",
             "description": "Deletes the billing group.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "DescribeBillingGroup": {
             "main": "./lib/actions/DescribeBillingGroup.js",
-            "title": "Returns information about a billing group.",
+            "title": "DescribeBillingGroup",
             "description": "Returns information about a billing group.",
             "fields": {
                 "verbose": {
@@ -497,7 +497,7 @@
         },
         "UpdateBillingGroup": {
             "main": "./lib/actions/UpdateBillingGroup.js",
-            "title": "Updates information about the billing group.",
+            "title": "UpdateBillingGroup",
             "description": "Updates information about the billing group.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "CreateBillingGroup": {
             "main": "./lib/actions/CreateBillingGroup.js",
-            "title": "Creates a billing group.",
+            "title": "CreateBillingGroup",
             "description": "Creates a billing group.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "ListThingsInBillingGroup": {
             "main": "./lib/actions/ListThingsInBillingGroup.js",
-            "title": "Lists the things you have added to the given billing group.",
+            "title": "ListThingsInBillingGroup",
             "description": "Lists the things you have added to the given billing group.",
             "fields": {
                 "verbose": {
@@ -548,7 +548,7 @@
         },
         "RegisterCACertificate": {
             "main": "./lib/actions/RegisterCACertificate.js",
-            "title": "Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.",
+            "title": "RegisterCACertificate",
             "description": "Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.",
             "fields": {
                 "verbose": {
@@ -565,7 +565,7 @@
         },
         "DeleteCACertificate": {
             "main": "./lib/actions/DeleteCACertificate.js",
-            "title": "Deletes a registered CA certificate.",
+            "title": "DeleteCACertificate",
             "description": "Deletes a registered CA certificate.",
             "fields": {
                 "verbose": {
@@ -582,7 +582,7 @@
         },
         "DescribeCACertificate": {
             "main": "./lib/actions/DescribeCACertificate.js",
-            "title": "Describes a registered CA certificate.",
+            "title": "DescribeCACertificate",
             "description": "Describes a registered CA certificate.",
             "fields": {
                 "verbose": {
@@ -599,7 +599,7 @@
         },
         "UpdateCACertificate": {
             "main": "./lib/actions/UpdateCACertificate.js",
-            "title": "Updates a registered CA certificate.",
+            "title": "UpdateCACertificate",
             "description": "Updates a registered CA certificate.",
             "fields": {
                 "verbose": {
@@ -616,8 +616,8 @@
         },
         "ListCACertificates": {
             "main": "./lib/actions/ListCACertificates.js",
-            "title": "<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
-            "description": "<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "title": "ListCACertificates",
+            "description": "Lists the CA certificates registered for your AWS account.\n\nThe results are paginated with a default page size of 25. You can use the\nreturned marker to retrieve additional results.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -633,8 +633,8 @@
         },
         "CancelCertificateTransfer": {
             "main": "./lib/actions/CancelCertificateTransfer.js",
-            "title": "<p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>",
-            "description": "<p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>",
+            "title": "CancelCertificateTransfer",
+            "description": "Cancels a pending transfer for the specified certificate.\n\n Note Only the transfer source account can use this operation to cancel a\ntransfer. (Transfer destinations can use RejectCertificateTransfer instead.)\nAfter transfer, AWS IoT returns the certificate to the source account in the\nINACTIVE state. After the destination account has accepted the transfer, the\ntransfer cannot be cancelled.\n\nAfter a certificate transfer is cancelled, the status of the certificate changes\nfrom PENDING_TRANSFER to INACTIVE.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -650,7 +650,7 @@
         },
         "RegisterCertificate": {
             "main": "./lib/actions/RegisterCertificate.js",
-            "title": "Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.",
+            "title": "RegisterCertificate",
             "description": "Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.",
             "fields": {
                 "verbose": {
@@ -667,8 +667,8 @@
         },
         "ListCertificates": {
             "main": "./lib/actions/ListCertificates.js",
-            "title": "<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
-            "description": "<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
+            "title": "ListCertificates",
+            "description": "Lists the certificates registered in your AWS account.\n\nThe results are paginated with a default page size of 25. You can use the\nreturned marker to retrieve additional results.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -684,8 +684,8 @@
         },
         "CreateCertificateFromCsr": {
             "main": "./lib/actions/CreateCertificateFromCsr.js",
-            "title": "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p> <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
-            "description": "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p> <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs.</p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR.</p> <p>The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process:</p> <p>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p>On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_}</p> <p>On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:</p> <p>&gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
+            "title": "CreateCertificateFromCsr",
+            "description": "Creates an X.509 certificate using the specified certificate signing request.\n\n Note: The CSR must include a public key that is either an RSA key with a length\nof at least 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. \n\n Note: Reusing the same certificate signing request (CSR) results in a distinct\ncertificate.\n\nYou can create multiple certificates in a batch by creating a directory, copying\nmultiple .csr files into that directory, and then specifying that directory on\nthe command line. The following commands show how to create a batch of\ncertificates given a batch of CSRs.\n\nAssuming a set of CSRs are located inside of the directory my-csr-directory:\n\nOn Linux and OS X, the command is:\n\n$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr\n--certificate-signing-request file://my-csr-directory/{}\n\nThis command lists all of the CSRs in my-csr-directory and pipes each CSR file\nname to the aws iot create-certificate-from-csr AWS CLI command to create a\ncertificate for the corresponding CSR.\n\nThe aws iot create-certificate-from-csr part of the command can also be run in\nparallel to speed up the certificate creation process:\n\n$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr\n--certificate-signing-request file://my-csr-directory/{}\n\nOn Windows PowerShell, the command to create certificates for all CSRs in\nmy-csr-directory is:\n\n> ls -Name my-csr-directory | %{aws iot create-certificate-from-csr\n--certificate-signing-request file://my-csr-directory/$_}\n\nOn a Windows command prompt, the command to create certificates for all CSRs in\nmy-csr-directory is:\n\n> forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr\n--certificate-signing-request file://@path\"",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -701,7 +701,7 @@
         },
         "ListCertificatesByCA": {
             "main": "./lib/actions/ListCertificatesByCA.js",
-            "title": "List the device certificates signed by the specified CA certificate.",
+            "title": "ListCertificatesByCA",
             "description": "List the device certificates signed by the specified CA certificate.",
             "fields": {
                 "verbose": {
@@ -718,7 +718,7 @@
         },
         "ListOutgoingCertificates": {
             "main": "./lib/actions/ListOutgoingCertificates.js",
-            "title": "Lists certificates that are being transferred but not yet accepted.",
+            "title": "ListOutgoingCertificates",
             "description": "Lists certificates that are being transferred but not yet accepted.",
             "fields": {
                 "verbose": {
@@ -735,8 +735,8 @@
         },
         "DeleteCertificate": {
             "main": "./lib/actions/DeleteCertificate.js",
-            "title": "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
-            "description": "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
+            "title": "DeleteCertificate",
+            "description": "Deletes the specified certificate.\n\nA certificate cannot be deleted if it has a policy attached to it or if its\nstatus is set to ACTIVE. To delete a certificate, first use the \nDetachPrincipalPolicy API to detach all policies. Next, use the \nUpdateCertificate API to set the certificate to the INACTIVE status.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -752,7 +752,7 @@
         },
         "DescribeCertificate": {
             "main": "./lib/actions/DescribeCertificate.js",
-            "title": "Gets information about the specified certificate.",
+            "title": "DescribeCertificate",
             "description": "Gets information about the specified certificate.",
             "fields": {
                 "verbose": {
@@ -769,8 +769,8 @@
         },
         "UpdateCertificate": {
             "main": "./lib/actions/UpdateCertificate.js",
-            "title": "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices, but these devices will be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.</p>",
-            "description": "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices, but these devices will be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.</p>",
+            "title": "UpdateCertificate",
+            "description": "Updates the status of the specified certificate. This operation is idempotent.\n\nMoving a certificate from the ACTIVE state (including REVOKED) will not\ndisconnect currently connected devices, but these devices will be unable to\nreconnect.\n\nThe ACTIVE state is required to authenticate devices connecting to AWS IoT using\na certificate.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -786,7 +786,7 @@
         },
         "ClearDefaultAuthorizer": {
             "main": "./lib/actions/ClearDefaultAuthorizer.js",
-            "title": "Clears the default authorizer.",
+            "title": "ClearDefaultAuthorizer",
             "description": "Clears the default authorizer.",
             "fields": {
                 "verbose": {
@@ -803,7 +803,7 @@
         },
         "DescribeDefaultAuthorizer": {
             "main": "./lib/actions/DescribeDefaultAuthorizer.js",
-            "title": "Describes the default authorizer.",
+            "title": "DescribeDefaultAuthorizer",
             "description": "Describes the default authorizer.",
             "fields": {
                 "verbose": {
@@ -820,7 +820,7 @@
         },
         "SetDefaultAuthorizer": {
             "main": "./lib/actions/SetDefaultAuthorizer.js",
-            "title": "Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.",
+            "title": "SetDefaultAuthorizer",
             "description": "Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.",
             "fields": {
                 "verbose": {
@@ -837,7 +837,7 @@
         },
         "DeleteDynamicThingGroup": {
             "main": "./lib/actions/DeleteDynamicThingGroup.js",
-            "title": "Deletes a dynamic thing group.",
+            "title": "DeleteDynamicThingGroup",
             "description": "Deletes a dynamic thing group.",
             "fields": {
                 "verbose": {
@@ -854,7 +854,7 @@
         },
         "UpdateDynamicThingGroup": {
             "main": "./lib/actions/UpdateDynamicThingGroup.js",
-            "title": "Updates a dynamic thing group.",
+            "title": "UpdateDynamicThingGroup",
             "description": "Updates a dynamic thing group.",
             "fields": {
                 "verbose": {
@@ -871,7 +871,7 @@
         },
         "CreateDynamicThingGroup": {
             "main": "./lib/actions/CreateDynamicThingGroup.js",
-            "title": "Creates a dynamic thing group.",
+            "title": "CreateDynamicThingGroup",
             "description": "Creates a dynamic thing group.",
             "fields": {
                 "verbose": {
@@ -888,7 +888,7 @@
         },
         "GetEffectivePolicies": {
             "main": "./lib/actions/GetEffectivePolicies.js",
-            "title": "Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the AWS IoT device gateway.",
+            "title": "GetEffectivePolicies",
             "description": "Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the AWS IoT device gateway.",
             "fields": {
                 "verbose": {
@@ -905,7 +905,7 @@
         },
         "DescribeEndpoint": {
             "main": "./lib/actions/DescribeEndpoint.js",
-            "title": "Returns a unique endpoint specific to the AWS account making the call.",
+            "title": "DescribeEndpoint",
             "description": "Returns a unique endpoint specific to the AWS account making the call.",
             "fields": {
                 "verbose": {
@@ -922,7 +922,7 @@
         },
         "DescribeEventConfigurations": {
             "main": "./lib/actions/DescribeEventConfigurations.js",
-            "title": "Describes event configurations.",
+            "title": "DescribeEventConfigurations",
             "description": "Describes event configurations.",
             "fields": {
                 "verbose": {
@@ -939,7 +939,7 @@
         },
         "UpdateEventConfigurations": {
             "main": "./lib/actions/UpdateEventConfigurations.js",
-            "title": "Updates the event configurations.",
+            "title": "UpdateEventConfigurations",
             "description": "Updates the event configurations.",
             "fields": {
                 "verbose": {
@@ -956,7 +956,7 @@
         },
         "GetIndexingConfiguration": {
             "main": "./lib/actions/GetIndexingConfiguration.js",
-            "title": "Gets the search configuration.",
+            "title": "GetIndexingConfiguration",
             "description": "Gets the search configuration.",
             "fields": {
                 "verbose": {
@@ -973,7 +973,7 @@
         },
         "UpdateIndexingConfiguration": {
             "main": "./lib/actions/UpdateIndexingConfiguration.js",
-            "title": "Updates the search configuration.",
+            "title": "UpdateIndexingConfiguration",
             "description": "Updates the search configuration.",
             "fields": {
                 "verbose": {
@@ -990,7 +990,7 @@
         },
         "ListIndices": {
             "main": "./lib/actions/ListIndices.js",
-            "title": "Lists the search indices.",
+            "title": "ListIndices",
             "description": "Lists the search indices.",
             "fields": {
                 "verbose": {
@@ -1007,7 +1007,7 @@
         },
         "SearchIndex": {
             "main": "./lib/actions/SearchIndex.js",
-            "title": "The query search index.",
+            "title": "SearchIndex",
             "description": "The query search index.",
             "fields": {
                 "verbose": {
@@ -1024,7 +1024,7 @@
         },
         "DescribeIndex": {
             "main": "./lib/actions/DescribeIndex.js",
-            "title": "Describes a search index.",
+            "title": "DescribeIndex",
             "description": "Describes a search index.",
             "fields": {
                 "verbose": {
@@ -1041,7 +1041,7 @@
         },
         "ListJobs": {
             "main": "./lib/actions/ListJobs.js",
-            "title": "Lists jobs.",
+            "title": "ListJobs",
             "description": "Lists jobs.",
             "fields": {
                 "verbose": {
@@ -1058,8 +1058,8 @@
         },
         "DeleteJob": {
             "main": "./lib/actions/DeleteJob.js",
-            "title": "<p>Deletes a job and its related job executions.</p> <p>Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as \"DELETION_IN_PROGRESS\". Attempting to delete or cancel a job whose status is already \"DELETION_IN_PROGRESS\" will result in an error.</p> <p>Only 10 jobs may have status \"DELETION_IN_PROGRESS\" at the same time, or a LimitExceededException will occur.</p>",
-            "description": "<p>Deletes a job and its related job executions.</p> <p>Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as \"DELETION_IN_PROGRESS\". Attempting to delete or cancel a job whose status is already \"DELETION_IN_PROGRESS\" will result in an error.</p> <p>Only 10 jobs may have status \"DELETION_IN_PROGRESS\" at the same time, or a LimitExceededException will occur.</p>",
+            "title": "DeleteJob",
+            "description": "Deletes a job and its related job executions.\n\nDeleting a job may take time, depending on the number of job executions created\nfor the job and various other factors. While the job is being deleted, the\nstatus of the job will be shown as \"DELETION_IN_PROGRESS\". Attempting to delete\nor cancel a job whose status is already \"DELETION_IN_PROGRESS\" will result in an\nerror.\n\nOnly 10 jobs may have status \"DELETION_IN_PROGRESS\" at the same time, or a\nLimitExceededException will occur.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1075,7 +1075,7 @@
         },
         "DescribeJob": {
             "main": "./lib/actions/DescribeJob.js",
-            "title": "Describes a job.",
+            "title": "DescribeJob",
             "description": "Describes a job.",
             "fields": {
                 "verbose": {
@@ -1092,7 +1092,7 @@
         },
         "UpdateJob": {
             "main": "./lib/actions/UpdateJob.js",
-            "title": "Updates supported fields of the specified job.",
+            "title": "UpdateJob",
             "description": "Updates supported fields of the specified job.",
             "fields": {
                 "verbose": {
@@ -1109,7 +1109,7 @@
         },
         "CreateJob": {
             "main": "./lib/actions/CreateJob.js",
-            "title": "Creates a job.",
+            "title": "CreateJob",
             "description": "Creates a job.",
             "fields": {
                 "verbose": {
@@ -1126,7 +1126,7 @@
         },
         "CancelJob": {
             "main": "./lib/actions/CancelJob.js",
-            "title": "Cancels a job.",
+            "title": "CancelJob",
             "description": "Cancels a job.",
             "fields": {
                 "verbose": {
@@ -1143,7 +1143,7 @@
         },
         "GetJobDocument": {
             "main": "./lib/actions/GetJobDocument.js",
-            "title": "Gets a job document.",
+            "title": "GetJobDocument",
             "description": "Gets a job document.",
             "fields": {
                 "verbose": {
@@ -1160,8 +1160,8 @@
         },
         "AssociateTargetsWithJob": {
             "main": "./lib/actions/AssociateTargetsWithJob.js",
-            "title": "<p>Associates a group with a continuous job. The following criteria must be met: </p> <ul> <li> <p>The job must have been created with the <code>targetSelection</code> field set to \"CONTINUOUS\".</p> </li> <li> <p>The job status must currently be \"IN_PROGRESS\".</p> </li> <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> </ul>",
-            "description": "<p>Associates a group with a continuous job. The following criteria must be met: </p> <ul> <li> <p>The job must have been created with the <code>targetSelection</code> field set to \"CONTINUOUS\".</p> </li> <li> <p>The job status must currently be \"IN_PROGRESS\".</p> </li> <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> </ul>",
+            "title": "AssociateTargetsWithJob",
+            "description": "Associates a group with a continuous job. The following criteria must be met: \n\n *  The job must have been created with the targetSelection field set to\n   \"CONTINUOUS\".\n   \n   \n *  The job status must currently be \"IN_PROGRESS\".\n   \n   \n *  The total number of targets associated with a job must not exceed 100.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1177,7 +1177,7 @@
         },
         "ListJobExecutionsForJob": {
             "main": "./lib/actions/ListJobExecutionsForJob.js",
-            "title": "Lists the job executions for a job.",
+            "title": "ListJobExecutionsForJob",
             "description": "Lists the job executions for a job.",
             "fields": {
                 "verbose": {
@@ -1194,8 +1194,8 @@
         },
         "CreateKeysAndCertificate": {
             "main": "./lib/actions/CreateKeysAndCertificate.js",
-            "title": "<p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep it in a secure location.</p>",
-            "description": "<p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.</p> <p> <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep it in a secure location.</p>",
+            "title": "CreateKeysAndCertificate",
+            "description": "Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued\npublic key.\n\n Note This is the only time AWS IoT issues the private key for this certificate,\nso it is important to keep it in a secure location.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1211,8 +1211,8 @@
         },
         "GetLoggingOptions": {
             "main": "./lib/actions/GetLoggingOptions.js",
-            "title": "<p>Gets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code> instead.</p>",
-            "description": "<p>Gets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code> instead.</p>",
+            "title": "GetLoggingOptions",
+            "description": "Gets the logging options.\n\nNOTE: use of this command is not recommended. Use GetV2LoggingOptions instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1228,8 +1228,8 @@
         },
         "SetLoggingOptions": {
             "main": "./lib/actions/SetLoggingOptions.js",
-            "title": "<p>Sets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code> instead.</p>",
-            "description": "<p>Sets the logging options.</p> <p>NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code> instead.</p>",
+            "title": "SetLoggingOptions",
+            "description": "Sets the logging options.\n\nNOTE: use of this command is not recommended. Use SetV2LoggingOptions instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1245,7 +1245,7 @@
         },
         "ListOTAUpdates": {
             "main": "./lib/actions/ListOTAUpdates.js",
-            "title": "Lists OTA updates.",
+            "title": "ListOTAUpdates",
             "description": "Lists OTA updates.",
             "fields": {
                 "verbose": {
@@ -1262,7 +1262,7 @@
         },
         "DeleteOTAUpdate": {
             "main": "./lib/actions/DeleteOTAUpdate.js",
-            "title": "Delete an OTA update.",
+            "title": "DeleteOTAUpdate",
             "description": "Delete an OTA update.",
             "fields": {
                 "verbose": {
@@ -1279,7 +1279,7 @@
         },
         "GetOTAUpdate": {
             "main": "./lib/actions/GetOTAUpdate.js",
-            "title": "Gets an OTA update.",
+            "title": "GetOTAUpdate",
             "description": "Gets an OTA update.",
             "fields": {
                 "verbose": {
@@ -1296,7 +1296,7 @@
         },
         "CreateOTAUpdate": {
             "main": "./lib/actions/CreateOTAUpdate.js",
-            "title": "Creates an AWS IoT OTAUpdate on a target group of things or groups.",
+            "title": "CreateOTAUpdate",
             "description": "Creates an AWS IoT OTAUpdate on a target group of things or groups.",
             "fields": {
                 "verbose": {
@@ -1313,7 +1313,7 @@
         },
         "ListPolicies": {
             "main": "./lib/actions/ListPolicies.js",
-            "title": "Lists your policies.",
+            "title": "ListPolicies",
             "description": "Lists your policies.",
             "fields": {
                 "verbose": {
@@ -1330,8 +1330,8 @@
         },
         "DeletePolicy": {
             "main": "./lib/actions/DeletePolicy.js",
-            "title": "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the DeletePolicyVersion API to delete all non-default versions of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
-            "description": "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the DeletePolicyVersion API to delete all non-default versions of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
+            "title": "DeletePolicy",
+            "description": "Deletes the specified policy.\n\nA policy cannot be deleted if it has non-default versions or it is attached to\nany certificate.\n\nTo delete a policy, use the DeletePolicyVersion API to delete all non-default\nversions of the policy; use the DetachPrincipalPolicy API to detach the policy\nfrom any certificate; and then use the DeletePolicy API to delete the policy.\n\nWhen a policy is deleted using DeletePolicy, its default version is deleted with\nit.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1347,7 +1347,7 @@
         },
         "GetPolicy": {
             "main": "./lib/actions/GetPolicy.js",
-            "title": "Gets information about the specified policy with the policy document of the default version.",
+            "title": "GetPolicy",
             "description": "Gets information about the specified policy with the policy document of the default version.",
             "fields": {
                 "verbose": {
@@ -1364,8 +1364,8 @@
         },
         "CreatePolicy": {
             "main": "./lib/actions/CreatePolicy.js",
-            "title": "<p>Creates an AWS IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p>",
-            "description": "<p>Creates an AWS IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p>",
+            "title": "CreatePolicy",
+            "description": "Creates an AWS IoT policy.\n\nThe created policy is the default version for the policy. This operation creates\na policy version with a version identifier of 1 and sets 1 as the policy's\ndefault version.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1381,7 +1381,7 @@
         },
         "ListPolicyVersions": {
             "main": "./lib/actions/ListPolicyVersions.js",
-            "title": "Lists the versions of the specified policy and identifies the default version.",
+            "title": "ListPolicyVersions",
             "description": "Lists the versions of the specified policy and identifies the default version.",
             "fields": {
                 "verbose": {
@@ -1398,8 +1398,8 @@
         },
         "CreatePolicyVersion": {
             "main": "./lib/actions/CreatePolicyVersion.js",
-            "title": "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>",
-            "description": "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>",
+            "title": "CreatePolicyVersion",
+            "description": "Creates a new version of the specified AWS IoT policy. To update a policy,\ncreate a new policy version. A managed policy can have up to five versions. If\nthe policy has five versions, you must use DeletePolicyVersion to delete an\nexisting version before you create a new one.\n\nOptionally, you can set the new version as the policy's default version. The\ndefault version is the operative version (that is, the version that is in effect\nfor the certificates to which the policy is attached).",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1415,7 +1415,7 @@
         },
         "DeletePolicyVersion": {
             "main": "./lib/actions/DeletePolicyVersion.js",
-            "title": "Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.",
+            "title": "DeletePolicyVersion",
             "description": "Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.",
             "fields": {
                 "verbose": {
@@ -1432,7 +1432,7 @@
         },
         "GetPolicyVersion": {
             "main": "./lib/actions/GetPolicyVersion.js",
-            "title": "Gets information about the specified policy version.",
+            "title": "GetPolicyVersion",
             "description": "Gets information about the specified policy version.",
             "fields": {
                 "verbose": {
@@ -1449,7 +1449,7 @@
         },
         "SetDefaultPolicyVersion": {
             "main": "./lib/actions/SetDefaultPolicyVersion.js",
-            "title": "Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicy API.",
+            "title": "SetDefaultPolicyVersion",
             "description": "Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicy API.",
             "fields": {
                 "verbose": {
@@ -1466,8 +1466,8 @@
         },
         "ListPolicyPrincipals": {
             "main": "./lib/actions/ListPolicyPrincipals.js",
-            "title": "<p>Lists the principals associated with the specified policy.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.</p>",
-            "description": "<p>Lists the principals associated with the specified policy.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.</p>",
+            "title": "ListPolicyPrincipals",
+            "description": "Lists the principals associated with the specified policy.\n\n Note: This API is deprecated. Please use ListTargetsForPolicy instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1483,7 +1483,7 @@
         },
         "ListTargetsForPolicy": {
             "main": "./lib/actions/ListTargetsForPolicy.js",
-            "title": "List targets for the specified policy.",
+            "title": "ListTargetsForPolicy",
             "description": "List targets for the specified policy.",
             "fields": {
                 "verbose": {
@@ -1500,8 +1500,8 @@
         },
         "ListPrincipalPolicies": {
             "main": "./lib/actions/ListPrincipalPolicies.js",
-            "title": "<p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href=\"https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax\">AmazonCognito Identity format</a>.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.</p>",
-            "description": "<p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href=\"https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax\">AmazonCognito Identity format</a>.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.</p>",
+            "title": "ListPrincipalPolicies",
+            "description": "Lists the policies attached to the specified principal. If you use an Cognito\nidentity, the ID must be in AmazonCognito Identity format\n[https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax]\n.\n\n Note: This API is deprecated. Please use ListAttachedPolicies instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1517,8 +1517,8 @@
         },
         "DetachPrincipalPolicy": {
             "main": "./lib/actions/DetachPrincipalPolicy.js",
-            "title": "<p>Removes the specified policy from the specified certificate.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.</p>",
-            "description": "<p>Removes the specified policy from the specified certificate.</p> <p> <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.</p>",
+            "title": "DetachPrincipalPolicy",
+            "description": "Removes the specified policy from the specified certificate.\n\n Note: This API is deprecated. Please use DetachPolicy instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1534,8 +1534,8 @@
         },
         "AttachPrincipalPolicy": {
             "main": "./lib/actions/AttachPrincipalPolicy.js",
-            "title": "<p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p> <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.</p>",
-            "description": "<p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p> <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.</p>",
+            "title": "AttachPrincipalPolicy",
+            "description": "Attaches the specified policy to the specified principal (certificate or other\ncredential).\n\n Note: This API is deprecated. Please use AttachPolicy instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1551,7 +1551,7 @@
         },
         "ListPrincipalThings": {
             "main": "./lib/actions/ListPrincipalThings.js",
-            "title": "Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. ",
+            "title": "ListPrincipalThings",
             "description": "Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. ",
             "fields": {
                 "verbose": {
@@ -1568,7 +1568,7 @@
         },
         "DeleteRegistrationCode": {
             "main": "./lib/actions/DeleteRegistrationCode.js",
-            "title": "Deletes a CA certificate registration code.",
+            "title": "DeleteRegistrationCode",
             "description": "Deletes a CA certificate registration code.",
             "fields": {
                 "verbose": {
@@ -1585,7 +1585,7 @@
         },
         "GetRegistrationCode": {
             "main": "./lib/actions/GetRegistrationCode.js",
-            "title": "Gets a registration code used to register a CA certificate with AWS IoT.",
+            "title": "GetRegistrationCode",
             "description": "Gets a registration code used to register a CA certificate with AWS IoT.",
             "fields": {
                 "verbose": {
@@ -1602,8 +1602,8 @@
         },
         "RejectCertificateTransfer": {
             "main": "./lib/actions/RejectCertificateTransfer.js",
-            "title": "<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>",
-            "description": "<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>",
+            "title": "RejectCertificateTransfer",
+            "description": "Rejects a pending certificate transfer. After AWS IoT rejects a certificate\ntransfer, the certificate status changes from PENDING_TRANSFER to INACTIVE.\n\nTo check for pending certificate transfers, call ListCertificates to enumerate\nyour certificates.\n\nThis operation can only be called by the transfer destination. After it is\ncalled, the certificate will be returned to the source's account in the INACTIVE\nstate.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -1619,7 +1619,7 @@
         },
         "ListRoleAliases": {
             "main": "./lib/actions/ListRoleAliases.js",
-            "title": "Lists the role aliases registered in your account.",
+            "title": "ListRoleAliases",
             "description": "Lists the role aliases registered in your account.",
             "fields": {
                 "verbose": {
@@ -1636,7 +1636,7 @@
         },
         "DeleteRoleAlias": {
             "main": "./lib/actions/DeleteRoleAlias.js",
-            "title": "Deletes a role alias",
+            "title": "DeleteRoleAlias",
             "description": "Deletes a role alias",
             "fields": {
                 "verbose": {
@@ -1653,7 +1653,7 @@
         },
         "DescribeRoleAlias": {
             "main": "./lib/actions/DescribeRoleAlias.js",
-            "title": "Describes a role alias.",
+            "title": "DescribeRoleAlias",
             "description": "Describes a role alias.",
             "fields": {
                 "verbose": {
@@ -1670,7 +1670,7 @@
         },
         "CreateRoleAlias": {
             "main": "./lib/actions/CreateRoleAlias.js",
-            "title": "Creates a role alias.",
+            "title": "CreateRoleAlias",
             "description": "Creates a role alias.",
             "fields": {
                 "verbose": {
@@ -1687,7 +1687,7 @@
         },
         "UpdateRoleAlias": {
             "main": "./lib/actions/UpdateRoleAlias.js",
-            "title": "Updates a role alias.",
+            "title": "UpdateRoleAlias",
             "description": "Updates a role alias.",
             "fields": {
                 "verbose": {
@@ -1704,7 +1704,7 @@
         },
         "ListTopicRules": {
             "main": "./lib/actions/ListTopicRules.js",
-            "title": "Lists the rules for the specific topic.",
+            "title": "ListTopicRules",
             "description": "Lists the rules for the specific topic.",
             "fields": {
                 "verbose": {
@@ -1721,7 +1721,7 @@
         },
         "DeleteTopicRule": {
             "main": "./lib/actions/DeleteTopicRule.js",
-            "title": "Deletes the rule.",
+            "title": "DeleteTopicRule",
             "description": "Deletes the rule.",
             "fields": {
                 "verbose": {
@@ -1738,7 +1738,7 @@
         },
         "GetTopicRule": {
             "main": "./lib/actions/GetTopicRule.js",
-            "title": "Gets information about the rule.",
+            "title": "GetTopicRule",
             "description": "Gets information about the rule.",
             "fields": {
                 "verbose": {
@@ -1755,7 +1755,7 @@
         },
         "ReplaceTopicRule": {
             "main": "./lib/actions/ReplaceTopicRule.js",
-            "title": "Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "title": "ReplaceTopicRule",
             "description": "Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
             "fields": {
                 "verbose": {
@@ -1772,7 +1772,7 @@
         },
         "CreateTopicRule": {
             "main": "./lib/actions/CreateTopicRule.js",
-            "title": "Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
+            "title": "CreateTopicRule",
             "description": "Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.",
             "fields": {
                 "verbose": {
@@ -1789,7 +1789,7 @@
         },
         "DisableTopicRule": {
             "main": "./lib/actions/DisableTopicRule.js",
-            "title": "Disables the rule.",
+            "title": "DisableTopicRule",
             "description": "Disables the rule.",
             "fields": {
                 "verbose": {
@@ -1806,7 +1806,7 @@
         },
         "EnableTopicRule": {
             "main": "./lib/actions/EnableTopicRule.js",
-            "title": "Enables the rule.",
+            "title": "EnableTopicRule",
             "description": "Enables the rule.",
             "fields": {
                 "verbose": {
@@ -1823,7 +1823,7 @@
         },
         "ValidateSecurityProfileBehaviors": {
             "main": "./lib/actions/ValidateSecurityProfileBehaviors.js",
-            "title": "Validates a Device Defender security profile behaviors specification.",
+            "title": "ValidateSecurityProfileBehaviors",
             "description": "Validates a Device Defender security profile behaviors specification.",
             "fields": {
                 "verbose": {
@@ -1840,7 +1840,7 @@
         },
         "ListSecurityProfiles": {
             "main": "./lib/actions/ListSecurityProfiles.js",
-            "title": "Lists the Device Defender security profiles you have created. You can use filters to list only those security profiles associated with a thing group or only those associated with your account.",
+            "title": "ListSecurityProfiles",
             "description": "Lists the Device Defender security profiles you have created. You can use filters to list only those security profiles associated with a thing group or only those associated with your account.",
             "fields": {
                 "verbose": {
@@ -1857,7 +1857,7 @@
         },
         "ListSecurityProfilesForTarget": {
             "main": "./lib/actions/ListSecurityProfilesForTarget.js",
-            "title": "Lists the Device Defender security profiles attached to a target (thing group).",
+            "title": "ListSecurityProfilesForTarget",
             "description": "Lists the Device Defender security profiles attached to a target (thing group).",
             "fields": {
                 "verbose": {
@@ -1874,7 +1874,7 @@
         },
         "DeleteSecurityProfile": {
             "main": "./lib/actions/DeleteSecurityProfile.js",
-            "title": "Deletes a Device Defender security profile.",
+            "title": "DeleteSecurityProfile",
             "description": "Deletes a Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -1891,7 +1891,7 @@
         },
         "DescribeSecurityProfile": {
             "main": "./lib/actions/DescribeSecurityProfile.js",
-            "title": "Gets information about a Device Defender security profile.",
+            "title": "DescribeSecurityProfile",
             "description": "Gets information about a Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -1908,7 +1908,7 @@
         },
         "UpdateSecurityProfile": {
             "main": "./lib/actions/UpdateSecurityProfile.js",
-            "title": "Updates a Device Defender security profile.",
+            "title": "UpdateSecurityProfile",
             "description": "Updates a Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -1925,7 +1925,7 @@
         },
         "CreateSecurityProfile": {
             "main": "./lib/actions/CreateSecurityProfile.js",
-            "title": "Creates a Device Defender security profile.",
+            "title": "CreateSecurityProfile",
             "description": "Creates a Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -1942,7 +1942,7 @@
         },
         "DetachSecurityProfile": {
             "main": "./lib/actions/DetachSecurityProfile.js",
-            "title": "Disassociates a Device Defender security profile from a thing group or from this account.",
+            "title": "DetachSecurityProfile",
             "description": "Disassociates a Device Defender security profile from a thing group or from this account.",
             "fields": {
                 "verbose": {
@@ -1959,7 +1959,7 @@
         },
         "ListTargetsForSecurityProfile": {
             "main": "./lib/actions/ListTargetsForSecurityProfile.js",
-            "title": "Lists the targets (thing groups) associated with a given Device Defender security profile.",
+            "title": "ListTargetsForSecurityProfile",
             "description": "Lists the targets (thing groups) associated with a given Device Defender security profile.",
             "fields": {
                 "verbose": {
@@ -1976,7 +1976,7 @@
         },
         "AttachSecurityProfile": {
             "main": "./lib/actions/AttachSecurityProfile.js",
-            "title": "Associates a Device Defender security profile with a thing group or with this account. Each thing group or account can have up to five security profiles associated with it.",
+            "title": "AttachSecurityProfile",
             "description": "Associates a Device Defender security profile with a thing group or with this account. Each thing group or account can have up to five security profiles associated with it.",
             "fields": {
                 "verbose": {
@@ -1993,7 +1993,7 @@
         },
         "ListStreams": {
             "main": "./lib/actions/ListStreams.js",
-            "title": "Lists all of the streams in your AWS account.",
+            "title": "ListStreams",
             "description": "Lists all of the streams in your AWS account.",
             "fields": {
                 "verbose": {
@@ -2010,7 +2010,7 @@
         },
         "DeleteStream": {
             "main": "./lib/actions/DeleteStream.js",
-            "title": "Deletes a stream.",
+            "title": "DeleteStream",
             "description": "Deletes a stream.",
             "fields": {
                 "verbose": {
@@ -2027,7 +2027,7 @@
         },
         "DescribeStream": {
             "main": "./lib/actions/DescribeStream.js",
-            "title": "Gets information about a stream.",
+            "title": "DescribeStream",
             "description": "Gets information about a stream.",
             "fields": {
                 "verbose": {
@@ -2044,7 +2044,7 @@
         },
         "CreateStream": {
             "main": "./lib/actions/CreateStream.js",
-            "title": "Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted within last 90 days, we will resurrect that old stream by incrementing the version by 1.",
+            "title": "CreateStream",
             "description": "Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted within last 90 days, we will resurrect that old stream by incrementing the version by 1.",
             "fields": {
                 "verbose": {
@@ -2061,7 +2061,7 @@
         },
         "UpdateStream": {
             "main": "./lib/actions/UpdateStream.js",
-            "title": "Updates an existing stream. The stream version will be incremented by one.",
+            "title": "UpdateStream",
             "description": "Updates an existing stream. The stream version will be incremented by one.",
             "fields": {
                 "verbose": {
@@ -2078,7 +2078,7 @@
         },
         "ListTagsForResource": {
             "main": "./lib/actions/ListTagsForResource.js",
-            "title": "Lists the tags (metadata) you have assigned to the resource.",
+            "title": "ListTagsForResource",
             "description": "Lists the tags (metadata) you have assigned to the resource.",
             "fields": {
                 "verbose": {
@@ -2095,7 +2095,7 @@
         },
         "TagResource": {
             "main": "./lib/actions/TagResource.js",
-            "title": "Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.",
+            "title": "TagResource",
             "description": "Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.",
             "fields": {
                 "verbose": {
@@ -2112,7 +2112,7 @@
         },
         "DetachPolicy": {
             "main": "./lib/actions/DetachPolicy.js",
-            "title": "Detaches a policy from the specified target.",
+            "title": "DetachPolicy",
             "description": "Detaches a policy from the specified target.",
             "fields": {
                 "verbose": {
@@ -2129,7 +2129,7 @@
         },
         "AttachPolicy": {
             "main": "./lib/actions/AttachPolicy.js",
-            "title": "Attaches a policy to the specified target.",
+            "title": "AttachPolicy",
             "description": "Attaches a policy to the specified target.",
             "fields": {
                 "verbose": {
@@ -2146,7 +2146,7 @@
         },
         "TestAuthorization": {
             "main": "./lib/actions/TestAuthorization.js",
-            "title": "Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.",
+            "title": "TestAuthorization",
             "description": "Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.",
             "fields": {
                 "verbose": {
@@ -2163,7 +2163,7 @@
         },
         "ListThingGroups": {
             "main": "./lib/actions/ListThingGroups.js",
-            "title": "List the thing groups in your account.",
+            "title": "ListThingGroups",
             "description": "List the thing groups in your account.",
             "fields": {
                 "verbose": {
@@ -2180,7 +2180,7 @@
         },
         "AddThingToThingGroup": {
             "main": "./lib/actions/AddThingToThingGroup.js",
-            "title": "Adds a thing to a thing group.",
+            "title": "AddThingToThingGroup",
             "description": "Adds a thing to a thing group.",
             "fields": {
                 "verbose": {
@@ -2197,7 +2197,7 @@
         },
         "RemoveThingFromThingGroup": {
             "main": "./lib/actions/RemoveThingFromThingGroup.js",
-            "title": "Remove the specified thing from the specified group.",
+            "title": "RemoveThingFromThingGroup",
             "description": "Remove the specified thing from the specified group.",
             "fields": {
                 "verbose": {
@@ -2214,7 +2214,7 @@
         },
         "UpdateThingGroupsForThing": {
             "main": "./lib/actions/UpdateThingGroupsForThing.js",
-            "title": "Updates the groups to which the thing belongs.",
+            "title": "UpdateThingGroupsForThing",
             "description": "Updates the groups to which the thing belongs.",
             "fields": {
                 "verbose": {
@@ -2231,7 +2231,7 @@
         },
         "DeleteThingGroup": {
             "main": "./lib/actions/DeleteThingGroup.js",
-            "title": "Deletes a thing group.",
+            "title": "DeleteThingGroup",
             "description": "Deletes a thing group.",
             "fields": {
                 "verbose": {
@@ -2248,7 +2248,7 @@
         },
         "DescribeThingGroup": {
             "main": "./lib/actions/DescribeThingGroup.js",
-            "title": "Describe a thing group.",
+            "title": "DescribeThingGroup",
             "description": "Describe a thing group.",
             "fields": {
                 "verbose": {
@@ -2265,7 +2265,7 @@
         },
         "UpdateThingGroup": {
             "main": "./lib/actions/UpdateThingGroup.js",
-            "title": "Update a thing group.",
+            "title": "UpdateThingGroup",
             "description": "Update a thing group.",
             "fields": {
                 "verbose": {
@@ -2282,8 +2282,8 @@
         },
         "CreateThingGroup": {
             "main": "./lib/actions/CreateThingGroup.js",
-            "title": "<p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
-            "description": "<p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "title": "CreateThingGroup",
+            "description": "Create a thing group.\n\nThis is a control plane operation. See Authorization\n[https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html] for\ninformation about authorizing control plane actions.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -2299,7 +2299,7 @@
         },
         "ListThingsInThingGroup": {
             "main": "./lib/actions/ListThingsInThingGroup.js",
-            "title": "Lists the things in the specified group.",
+            "title": "ListThingsInThingGroup",
             "description": "Lists the things in the specified group.",
             "fields": {
                 "verbose": {
@@ -2316,7 +2316,7 @@
         },
         "ListThingRegistrationTasks": {
             "main": "./lib/actions/ListThingRegistrationTasks.js",
-            "title": "List bulk thing provisioning tasks.",
+            "title": "ListThingRegistrationTasks",
             "description": "List bulk thing provisioning tasks.",
             "fields": {
                 "verbose": {
@@ -2333,7 +2333,7 @@
         },
         "StartThingRegistrationTask": {
             "main": "./lib/actions/StartThingRegistrationTask.js",
-            "title": "Creates a bulk thing provisioning task.",
+            "title": "StartThingRegistrationTask",
             "description": "Creates a bulk thing provisioning task.",
             "fields": {
                 "verbose": {
@@ -2350,7 +2350,7 @@
         },
         "DescribeThingRegistrationTask": {
             "main": "./lib/actions/DescribeThingRegistrationTask.js",
-            "title": "Describes a bulk thing provisioning task.",
+            "title": "DescribeThingRegistrationTask",
             "description": "Describes a bulk thing provisioning task.",
             "fields": {
                 "verbose": {
@@ -2367,7 +2367,7 @@
         },
         "StopThingRegistrationTask": {
             "main": "./lib/actions/StopThingRegistrationTask.js",
-            "title": "Cancels a bulk thing provisioning task.",
+            "title": "StopThingRegistrationTask",
             "description": "Cancels a bulk thing provisioning task.",
             "fields": {
                 "verbose": {
@@ -2384,7 +2384,7 @@
         },
         "ListThingRegistrationTaskReports": {
             "main": "./lib/actions/ListThingRegistrationTaskReports.js",
-            "title": "Information about the thing registration tasks.",
+            "title": "ListThingRegistrationTaskReports",
             "description": "Information about the thing registration tasks.",
             "fields": {
                 "verbose": {
@@ -2401,7 +2401,7 @@
         },
         "ListThingTypes": {
             "main": "./lib/actions/ListThingTypes.js",
-            "title": "Lists the existing thing types.",
+            "title": "ListThingTypes",
             "description": "Lists the existing thing types.",
             "fields": {
                 "verbose": {
@@ -2418,7 +2418,7 @@
         },
         "DeleteThingType": {
             "main": "./lib/actions/DeleteThingType.js",
-            "title": "Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.",
+            "title": "DeleteThingType",
             "description": "Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.",
             "fields": {
                 "verbose": {
@@ -2435,7 +2435,7 @@
         },
         "DescribeThingType": {
             "main": "./lib/actions/DescribeThingType.js",
-            "title": "Gets information about the specified thing type.",
+            "title": "DescribeThingType",
             "description": "Gets information about the specified thing type.",
             "fields": {
                 "verbose": {
@@ -2452,7 +2452,7 @@
         },
         "CreateThingType": {
             "main": "./lib/actions/CreateThingType.js",
-            "title": "Creates a new thing type.",
+            "title": "CreateThingType",
             "description": "Creates a new thing type.",
             "fields": {
                 "verbose": {
@@ -2469,7 +2469,7 @@
         },
         "DeprecateThingType": {
             "main": "./lib/actions/DeprecateThingType.js",
-            "title": "Deprecates a thing type. You can not associate new things with deprecated thing type.",
+            "title": "DeprecateThingType",
             "description": "Deprecates a thing type. You can not associate new things with deprecated thing type.",
             "fields": {
                 "verbose": {
@@ -2486,7 +2486,7 @@
         },
         "ListThings": {
             "main": "./lib/actions/ListThings.js",
-            "title": "Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. ",
+            "title": "ListThings",
             "description": "Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. ",
             "fields": {
                 "verbose": {
@@ -2503,7 +2503,7 @@
         },
         "RegisterThing": {
             "main": "./lib/actions/RegisterThing.js",
-            "title": "Provisions a thing.",
+            "title": "RegisterThing",
             "description": "Provisions a thing.",
             "fields": {
                 "verbose": {
@@ -2520,7 +2520,7 @@
         },
         "DeleteThing": {
             "main": "./lib/actions/DeleteThing.js",
-            "title": "Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.",
+            "title": "DeleteThing",
             "description": "Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.",
             "fields": {
                 "verbose": {
@@ -2537,7 +2537,7 @@
         },
         "DescribeThing": {
             "main": "./lib/actions/DescribeThing.js",
-            "title": "Gets information about the specified thing.",
+            "title": "DescribeThing",
             "description": "Gets information about the specified thing.",
             "fields": {
                 "verbose": {
@@ -2554,7 +2554,7 @@
         },
         "UpdateThing": {
             "main": "./lib/actions/UpdateThing.js",
-            "title": "Updates the data for a thing.",
+            "title": "UpdateThing",
             "description": "Updates the data for a thing.",
             "fields": {
                 "verbose": {
@@ -2571,8 +2571,8 @@
         },
         "CreateThing": {
             "main": "./lib/actions/CreateThing.js",
-            "title": "<p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
-            "description": "<p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html\">Authorization</a> for information about authorizing control plane actions.</p> </note>",
+            "title": "CreateThing",
+            "description": "Creates a thing record in the registry. If this call is made multiple times\nusing the same thing name and configuration, the call will succeed. If this call\nis made with the same thing name but different configuration a \nResourceAlreadyExistsException is thrown.\n\nThis is a control plane operation. See Authorization\n[https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html] for\ninformation about authorizing control plane actions.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -2588,7 +2588,7 @@
         },
         "ListJobExecutionsForThing": {
             "main": "./lib/actions/ListJobExecutionsForThing.js",
-            "title": "Lists the job executions for the specified thing.",
+            "title": "ListJobExecutionsForThing",
             "description": "Lists the job executions for the specified thing.",
             "fields": {
                 "verbose": {
@@ -2605,7 +2605,7 @@
         },
         "DescribeJobExecution": {
             "main": "./lib/actions/DescribeJobExecution.js",
-            "title": "Describes a job execution.",
+            "title": "DescribeJobExecution",
             "description": "Describes a job execution.",
             "fields": {
                 "verbose": {
@@ -2622,7 +2622,7 @@
         },
         "CancelJobExecution": {
             "main": "./lib/actions/CancelJobExecution.js",
-            "title": "Cancels the execution of a job for a given thing.",
+            "title": "CancelJobExecution",
             "description": "Cancels the execution of a job for a given thing.",
             "fields": {
                 "verbose": {
@@ -2639,7 +2639,7 @@
         },
         "DeleteJobExecution": {
             "main": "./lib/actions/DeleteJobExecution.js",
-            "title": "Deletes a job execution.",
+            "title": "DeleteJobExecution",
             "description": "Deletes a job execution.",
             "fields": {
                 "verbose": {
@@ -2656,8 +2656,8 @@
         },
         "DetachThingPrincipal": {
             "main": "./lib/actions/DetachThingPrincipal.js",
-            "title": "<p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>",
-            "description": "<p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>",
+            "title": "DetachThingPrincipal",
+            "description": "Detaches the specified principal from the specified thing. A principal can be\nX.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or\nfederated identities.\n\nThis call is asynchronous. It might take several seconds for the detachment to\npropagate.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -2673,7 +2673,7 @@
         },
         "ListThingPrincipals": {
             "main": "./lib/actions/ListThingPrincipals.js",
-            "title": "Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "title": "ListThingPrincipals",
             "description": "Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
             "fields": {
                 "verbose": {
@@ -2690,7 +2690,7 @@
         },
         "AttachThingPrincipal": {
             "main": "./lib/actions/AttachThingPrincipal.js",
-            "title": "Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
+            "title": "AttachThingPrincipal",
             "description": "Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.",
             "fields": {
                 "verbose": {
@@ -2707,7 +2707,7 @@
         },
         "ListThingGroupsForThing": {
             "main": "./lib/actions/ListThingGroupsForThing.js",
-            "title": "List the thing groups to which the specified thing belongs.",
+            "title": "ListThingGroupsForThing",
             "description": "List the thing groups to which the specified thing belongs.",
             "fields": {
                 "verbose": {
@@ -2724,8 +2724,8 @@
         },
         "TransferCertificate": {
             "main": "./lib/actions/TransferCertificate.js",
-            "title": "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>",
-            "description": "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>",
+            "title": "TransferCertificate",
+            "description": "Transfers the specified certificate to the specified AWS account.\n\nYou can cancel the transfer until it is acknowledged by the recipient.\n\nNo notification is sent to the transfer destination's account. It is up to the\ncaller to notify the transfer target.\n\nThe certificate being transferred must not be in the ACTIVE state. You can use\nthe UpdateCertificate API to deactivate it.\n\nThe certificate must not have any policies attached to it. You can use the\nDetachPrincipalPolicy API to detach them.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -2741,7 +2741,7 @@
         },
         "UntagResource": {
             "main": "./lib/actions/UntagResource.js",
-            "title": "Removes the given tags (metadata) from the resource.",
+            "title": "UntagResource",
             "description": "Removes the given tags (metadata) from the resource.",
             "fields": {
                 "verbose": {
@@ -2758,7 +2758,7 @@
         },
         "DeleteV2LoggingLevel": {
             "main": "./lib/actions/DeleteV2LoggingLevel.js",
-            "title": "Deletes a logging level.",
+            "title": "DeleteV2LoggingLevel",
             "description": "Deletes a logging level.",
             "fields": {
                 "verbose": {
@@ -2775,7 +2775,7 @@
         },
         "ListV2LoggingLevels": {
             "main": "./lib/actions/ListV2LoggingLevels.js",
-            "title": "Lists logging levels.",
+            "title": "ListV2LoggingLevels",
             "description": "Lists logging levels.",
             "fields": {
                 "verbose": {
@@ -2792,7 +2792,7 @@
         },
         "SetV2LoggingLevel": {
             "main": "./lib/actions/SetV2LoggingLevel.js",
-            "title": "Sets the logging level.",
+            "title": "SetV2LoggingLevel",
             "description": "Sets the logging level.",
             "fields": {
                 "verbose": {
@@ -2809,7 +2809,7 @@
         },
         "GetV2LoggingOptions": {
             "main": "./lib/actions/GetV2LoggingOptions.js",
-            "title": "Gets the fine grained logging options.",
+            "title": "GetV2LoggingOptions",
             "description": "Gets the fine grained logging options.",
             "fields": {
                 "verbose": {
@@ -2826,7 +2826,7 @@
         },
         "SetV2LoggingOptions": {
             "main": "./lib/actions/SetV2LoggingOptions.js",
-            "title": "Sets the logging options for the V2 logging service.",
+            "title": "SetV2LoggingOptions",
             "description": "Sets the logging options for the V2 logging service.",
             "fields": {
                 "verbose": {
@@ -2843,7 +2843,7 @@
         },
         "ListViolationEvents": {
             "main": "./lib/actions/ListViolationEvents.js",
-            "title": "Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior or thing (device).",
+            "title": "ListViolationEvents",
             "description": "Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior or thing (device).",
             "fields": {
                 "verbose": {
